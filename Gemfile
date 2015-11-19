@@ -10,13 +10,8 @@ gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 gem 'uglifier', '>= 1.3.0'
-=======
-# gem 'uglifier', '>= 1.3.0'
->>>>>>> Update Gemfile for heroku
-=======
-gem 'uglifier', '>= 1.3.0'
->>>>>>> Re-enable uglifier
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
