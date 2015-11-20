@@ -34,7 +34,7 @@ Rails.application.routes.draw do
   #       get 'sold'
   #     end
   #   end
-
+resources :activities, only: [:show, :new, :create]
   # Example resource route with sub-resources:
   #   resources :products do
   #     resources :comments, :sales
