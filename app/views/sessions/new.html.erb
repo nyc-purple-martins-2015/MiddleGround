@@ -1,14 +1,15 @@
-<div class="user-login">
-  <h1>Log In</h1>
-  <div class="user-login-form">
-    <%= form_tag session_create_path do %>
-    <%= label_tag :username %>
-    <%= text_field_tag :username %><br/>
-
-    <%= label_tag :password %>
-    <%= password_field_tag :password %><br/>
-
-    <%= submit_tag "Log In"%>
-    <% end %>
-  </div>
+<div class="user-login-form">
+  <script src="https://cdn.auth0.com/js/lock-7.9.min.js"></script>
+  <script>
+    var lock = new Auth0Lock('2M7P0OrlDnifR6x8NfkNr3VQsdKsqaMC', 'middleground.auth0.com');
+    var url = (document.location.origin + "/auth/auth0/callback")
+      lock.show({
+        container: 'root'
+      , callbackURL: url
+      , responseType: 'code'
+      , authParams: {
+        scope: 'openid profile'
+      }
+    });
+  </script>
 </div>
