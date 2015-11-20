@@ -1,4 +1,3 @@
-
 function initMap() {
 if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition(success);
@@ -32,5 +31,4 @@ var coords = new google.maps.LatLng(position.coords.latitude, position.coords.lo
       map: map,
       title:"You are here!"
   });
-
 
