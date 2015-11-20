@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
   has_many :votes
 
   def friends
-    self.accepted_friends + self.requested_friends
+    self.accepted_friends.where('friendships.pending = ?', 0) + self.requested_friends.where('friendships.pending = ?', 0)
   end
 
   def activities

@@ -36,10 +36,11 @@ ActiveRecord::Schema.define(version: 20151119230833) do
   end
 
   create_table "friendships", force: :cascade do |t|
-    t.integer  "requester_id", null: false
-    t.integer  "acceptor_id",  null: false
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.integer  "requester_id",             null: false
+    t.integer  "acceptor_id",              null: false
+    t.integer  "pending",      default: 1
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   create_table "users", force: :cascade do |t|
