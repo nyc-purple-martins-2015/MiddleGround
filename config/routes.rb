@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
+  root 'index#index'
   resources :users, only: [:create, :show]
+
   get '/search' =>'activities#search'
   get 'register' => 'users#new', as: :register
   get 'logout' => 'sessions#destroy', as: :logout
