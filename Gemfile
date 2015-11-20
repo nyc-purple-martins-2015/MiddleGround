@@ -24,8 +24,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt', '~> 3.1.7'
 gem 'gmaps4rails'
 gem 'yelp', require: 'yelp'
-gem 'omniauth'
-gem 'omniauth-auth0'
+gem 'omniauth', '~> 1.2'
+gem 'omniauth-auth0', '~> 1.1'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
