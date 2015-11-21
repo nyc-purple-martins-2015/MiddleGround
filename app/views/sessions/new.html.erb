@@ -4,11 +4,11 @@
 <script src="https://cdn.auth0.com/js/lock-7.9.min.js"></script>
 <script>
 
-  var lock = new Auth0Lock('2M7P0OrlDnifR6x8NfkNr3VQsdKsqaMC', 'middleground.auth0.com');
+  var lock = new Auth0Lock('lnHwrG0s9n7TjLTRDjk8zhjejeTcSpxS', 'middleground.auth0.com');
 
   lock.show({
       container: 'root'
-    , callbackURL: 'http://localhost/dummy'
+    , callbackURL: 'http://localhost:3000/auth/auth0/callback'
     , responseType: 'code'
     , authParams: {
       scope: 'openid profile'
