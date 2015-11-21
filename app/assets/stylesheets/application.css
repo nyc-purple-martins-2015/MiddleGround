@@ -26,6 +26,15 @@
   -o-animation: moveclouds 17s linear infinite;*/
 }
 
+.login-link a {
+  color: #032436;
+
+  margin-left: 90%;
+  max-height:100%;
+  width:1%;
+  font-size: auto;
+}
+
 a:hover {
     color: #032436;
 }
