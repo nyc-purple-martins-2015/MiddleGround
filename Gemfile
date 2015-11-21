@@ -35,14 +35,14 @@ gem 'geokit-rails'
 group :test do
   gem 'simplecov', :require => false
   gem 'capybara'
+  gem 'shoulda-matchers'
+  gem 'factory_girl_rails'
 end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'rspec-rails'
   gem 'faker'
-  gem 'shoulda-matchers'
-  gem 'factory_girl_rails'
   gem 'launchy'
   gem 'database_cleaner'
   gem 'awesome_print'
