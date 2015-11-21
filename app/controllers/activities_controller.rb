@@ -16,10 +16,9 @@ class ActivitiesController < ApplicationController
   end
 
   def show
-
     @activity = Activity.find_by(activity_params)
-
   end
+
 
 
   def activity_params
