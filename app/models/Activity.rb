@@ -4,6 +4,7 @@ class Activity < ActiveRecord::Base
   belongs_to :creator, class_name: 'User'
   belongs_to :friend, class_name: 'User'
 
+<<<<<<< 36d9df095939915538a13d8846ebbd19c17d2736
 
   acts_as_mappable :default_formula => :sphere,
                    :distance_field_name => :distance,
@@ -11,4 +12,7 @@ class Activity < ActiveRecord::Base
                    :lng_column_name => :long
    attr_accessor :address, :lat, :long
 
+=======
+   attr_accessor :address, :lat, :long
+>>>>>>> Take out trial js code
 end
