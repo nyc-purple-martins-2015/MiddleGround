@@ -10,7 +10,6 @@ class ActivitiesController < ApplicationController
   end
 
   def new
-    @activity = Activity.new
   end
 
   def create
@@ -25,7 +24,7 @@ class ActivitiesController < ApplicationController
   end
 
   def show
-    @activity = Activity.find_by(activity_params)
+    @activity = Activity.includes(:title, :address, :creator_id, :friend_id).find(params[:id])
   end
 
   private
