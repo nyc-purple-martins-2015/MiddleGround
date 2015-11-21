@@ -10,4 +10,5 @@ class Activity < ActiveRecord::Base
                    :lng_column_name => :long
 
   attr_accessor :address, :lat, :long
+
 end
