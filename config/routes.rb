@@ -11,8 +11,8 @@ Rails.application.routes.draw do
   get "/auth/auth0/callback" => "auth0#callback"
   get "/auth/failure" => "auth0#failure"
 
-  get '/activities' =>'activities#index'
-  resources :activities, only: [:index]
+  get '/index' =>'activities#index'
+  resources :activities, only: [:index, :new, :create, :show]
 
 
   # The priority is based upon order of creation: first created -> highest priority.
