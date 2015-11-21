@@ -33,7 +33,6 @@ $(document).ready(function(){
   }
   $("#new-activity-form-container").on('submit', function(event){
     event.preventDefault();
-    debugger
     var latitude = lat;
     var longitude = lng;
     var myLocation = new google.maps.LatLng({lat: latitude, lng: longitude});
@@ -41,7 +40,6 @@ $(document).ready(function(){
     var midpoint = google.maps.geometry.spherical.interpolate(myLocation, friendLocation, 0.5);
     var activity = $(this).find($("#activity")).val();
     var postRoute =$(this).children().attr("action");
-    debugger
     var newActivityRequest = $.ajax({
       method: 'post',
       url: postRoute,

@@ -14,26 +14,25 @@ class ActivitiesController < ApplicationController
 
   def create
     location = {latitude: params[:midlat], longitude: params[:midlong]}
-
     parameters = {
       term: params[:activity],
       radius_filter: 800
     }
-   x = Yelp.client.search_by_coordinates(location, parameters).businesses
-   y = x.sample
-
-   byebug
-    # activity = Activity.new(activity_params)
-    # if activity.save
-    #   redirect_to activity_path
-    # else
-    #   flash[:errors] = "Something went wrong with your request. Please try again."
-    #   redirect_to new_activity_path
-    # end
+   destination = Yelp.client.search_by_coordinates(location, parameters).businesses.sample
+   title = destination.name
+   address = destination.location.display_address.join(", ")
+   activity = Activity.new(title: title, address: address)
+    # byebug
+    if activity.save
+      redirect_to activity_path
+    else
+      flash[:errors] = "Something went wrong with your request. Please try again."
+      redirect_to new_activity_path
+    end
   end
 
   def show
-    @activity = Activity.includes(:title, :address, :creator_id, :friend_id).find(params[:id])
+    @activity = Activity.find(params[:id])
   end
 
   private
