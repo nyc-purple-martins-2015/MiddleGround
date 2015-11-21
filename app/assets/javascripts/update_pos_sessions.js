@@ -18,8 +18,12 @@
           var pos = getLocation();
           showPosition(pos);
 <<<<<<< HEAD
+<<<<<<< HEAD
       });
 =======
       })
 >>>>>>> Update Gemfile for heroku
+=======
+      });
+>>>>>>> Add semicolon
       });
