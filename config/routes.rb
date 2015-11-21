@@ -1,14 +1,18 @@
 Rails.application.routes.draw do
-  root 'index#index'
+  root 'homepage#index'
   resources :users, only: [:create, :show]
 
   get '/search' =>'activities#search'
+
   get 'register' => 'users#new', as: :register
   get 'logout' => 'sessions#destroy', as: :logout
   get 'login' => 'sessions#new', as: :login
   post 'session_create' => 'sessions#create', as: :session_create
   get "/auth/auth0/callback" => "auth0#callback"
   get "/auth/failure" => "auth0#failure"
+
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
