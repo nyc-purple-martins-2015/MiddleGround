@@ -26,6 +26,7 @@ gem 'gmaps4rails'
 gem 'yelp', require: 'yelp'
 gem 'omniauth', '~> 1.2'
 gem 'omniauth-auth0', '~> 1.1'
+gem 'geokit-rails'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
