@@ -11,7 +11,7 @@ $(document).ready(function(){
       mapcanvas.style.width = '300px';
       document.querySelector('article').appendChild(mapcanvas);
       lat = position.coords.latitude;
-      lng = -position.coords.longitude;
+      lng = position.coords.longitude;
 
     var coords = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
     var options = {
@@ -33,18 +33,24 @@ $(document).ready(function(){
   }
   $("#new-activity-form-container").on('submit', function(event){
     event.preventDefault();
-    var myLocation = new google.maps.LatLng({lat: lat, lng: lng});
+    debugger
+    var latitude = lat;
+    var longitude = lng;
+    var myLocation = new google.maps.LatLng({lat: latitude, lng: longitude});
     var friendLocation = new google.maps.LatLng({lat: 40.661789, lng: -73.959723});
     var midpoint = google.maps.geometry.spherical.interpolate(myLocation, friendLocation, 0.5);
     var activity = $(this).find($("#activity")).val();
     var postRoute =$(this).children().attr("action");
+    debugger
     var newActivityRequest = $.ajax({
       method: 'post',
       url: postRoute,
       data: {
-        midpoint: midpoint,
+        midlat: midpoint.lat().toFixed(4),
+        midlong: midpoint.lng().toFixed(4),
         activity: activity
-      }
+      },
+      datatype: 'json'
     });
     newActivityRequest.done(function(newActivityHTML){
       console.log(newActivityHTML);
