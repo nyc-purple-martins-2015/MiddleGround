@@ -48,6 +48,8 @@ ActiveRecord::Schema.define(version: 20151119230833) do
     t.string   "password_digest", null: false
     t.string   "phone_number",    null: false
     t.string   "email",           null: false
+    t.string   "uid"
+    t.string   "avatar",          null: false
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
