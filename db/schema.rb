@@ -46,14 +46,13 @@ ActiveRecord::Schema.define(version: 20151121012143) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "username",        null: false
-    t.string   "password_digest", null: false
+    t.string   "username",     null: false
     t.string   "phone_number"
-    t.string   "email",           null: false
+    t.string   "email"
     t.string   "uid"
     t.string   "avatar"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   add_index "users", ["username"], name: "index_users_on_username", using: :btree
