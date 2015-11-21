@@ -1,12 +1,13 @@
+
 function initMap() {
 if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition(success);
 } else {
   error('Geo Location is not supported');
+
 }
 }
 
-navigator.geolocation.getCurrentPosition(success);
 
 function success(position) {
      var lat = position.coords.latitude;
@@ -31,4 +32,3 @@ var coords = new google.maps.LatLng(position.coords.latitude, position.coords.lo
       map: map,
       title:"You are here!"
   });
-
