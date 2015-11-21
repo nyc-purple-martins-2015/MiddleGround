@@ -7,21 +7,37 @@ class ActivitiesController < ApplicationController
     }
     # render json: Yelp.client.search('Waterford, CT', params).businesses.map{|business| "#{business.name} #{business.location.display_address}"}.sample
     render json: Yelp.client.search("cll= 40.7, 74.0", params).businesses.map {|business| business.name }
-
   end
 
   def new
-    @activity = Activity.new
   end
 
   def create
+    location = {latitude: params[:midlat], longitude: params[:midlong]}
+    parameters = {
+      term: params[:activity],
+      radius_filter: 800
+    }
+   destination = Yelp.client.search_by_coordinates(location, parameters).businesses.sample
+   title = destination.name
+   address = destination.location.display_address.join(", ")
+   activity = Activity.new(title: title, address: address)
+    # byebug
+    if activity.save
+      redirect_to activity_path
+    else
+      flash[:errors] = "Something went wrong with your request. Please try again."
+      redirect_to new_activity_path
+    end
   end
 
   def show
-    @activity = Activity.find_by(activity_params)
+    @activity = Activity.find(params[:id])
   end
 
+  private
+
   def activity_params
-      params.require(:activity).permit(:address, :lat,:long)
+    params.permit(:activity, :midlat, :midlong)
   end
 end
