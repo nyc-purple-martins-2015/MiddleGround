@@ -1,5 +1,6 @@
 
 function initMap() {
+
 if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition(success);
 } else {
@@ -7,6 +8,13 @@ if (navigator.geolocation) {
 
 
 }
+
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(success);
+  } else {
+    error('Geo Location is not supported');
+  }
+
 }
 
 
