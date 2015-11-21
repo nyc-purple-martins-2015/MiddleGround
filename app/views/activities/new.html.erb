@@ -1,58 +1,36 @@
 <div class="content">
   <div class="create-activity">
     <h3> Activity Finder </h3>
-      <!-- if there is a current user -->
-        <!-- code here for new activity -->
+    <!-- if there is a current user -->
+    <!-- friend has been selected -->
+    <!-- friend's address is known -->
+    <!-- code here for new activity -->
+    <div id="new-activity-form-container">
+      <%= form_tag ("/activities") %>
+      <%= label_tag 'Your Location' %>:
+      <%= text_field_tag 'user_location' %><br />
 
-        <div class="activity-sub-category">
-        </div>
-      <!-- else -->
-        <!-- code here for visitor -->
-      <!-- end -->
-      <!-- category already here as a variable that was passed in -->
-      <div class="activity-sub-category">
-      </div>
+      <%= label_tag "Friend's Location" %>:
+      <%= text_field_tag 'friend_location' %><br />
+      <%= label_tag "Activity" %>:
+      <%= text_field_tag 'activity' %><br />
+      <%= submit_tag 'Find our Middle Ground!' %>
+    </div>
+
+    <div class="activity-sub-category">
+    </div>
+    <!-- else -->
+    <!-- code here for visitor -->
+    <!-- end -->
+    <!-- category already here as a variable that was passed in -->
+    <div class="activity-sub-category">
+    </div>
 
   </div>
 </div>
 <section id="user-location">
 
-    <article>
-    </article>
-      <div id="map_container"></div>
- <script>
-function success(position) {
-  var mapcanvas = document.createElement('div');
-  mapcanvas.id = 'mapcontainer';
-  mapcanvas.style.height = '200px';
-  mapcanvas.style.width = '300px';
-
-  document.querySelector('article').appendChild(mapcanvas);
-
-  var coords = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-  var options = {
-    zoom: 15,
-    center: coords,
-    mapTypeControl: false,
-    navigationControlOptions: {
-      style: google.maps.NavigationControlStyle.SMALL
-    },
-    mapTypeId: google.maps.MapTypeId.ROADMAP
-  };
-  var map = new google.maps.Map(document.getElementById("mapcontainer"), options);
-
-  var marker = new google.maps.Marker({
-      position: coords,
-      map: map,
-      title:"You are here!"
-  });
-}
-
-if (navigator.geolocation) {
-  navigator.geolocation.getCurrentPosition(success);
-} else {
-  error('Geo Location is not supported');
-}
-
-</script>
+  <article>
+  </article>
+  <div id="map_container"></div>
 </section>
