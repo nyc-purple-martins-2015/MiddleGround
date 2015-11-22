@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20151121012143) do
 
   create_table "activities", force: :cascade do |t|
     t.string   "title",      null: false
-    t.string   "address",    null: false
+    t.string   "location",   null: false
     t.integer  "creator_id", null: false
     t.integer  "friend_id",  null: false
     t.datetime "created_at", null: false
