@@ -1,4 +1,9 @@
 #map_container {
       width: 500px;
       height: 400px;
-    }
+}
+
+#map-thing{
+    height: 500px;
+    width: 400px;
+}
