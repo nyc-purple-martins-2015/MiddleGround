@@ -10,8 +10,8 @@ Rails.application.routes.draw do
   post 'session_create' => 'sessions#create', as: :session_create
   get "/auth/auth0/callback" => "auth0#callback"
   get "/auth/failure" => "auth0#failure"
-
-
+  get 'edit' => 'users#edit'
+  put 'update' => 'users#update'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,0 +1,12 @@
+<%= form_for :user, url: '/update' do |f| %>
+<div class="location-form">
+    <%= f.hidden_field :lat , id: 'lat', value: '' %>
+    <%= f.hidden_field :long, id:'long', value: '' %>
+</div>
+<div class="contact-info-form">
+  <%=f.text_field :phone_number %>
+  <%=f.text_field :email %>
+    <%= f.submit "Update Profile!"%>
+    <% end %>
+  </div>
+</div>
