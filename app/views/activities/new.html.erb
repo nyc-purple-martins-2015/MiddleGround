@@ -11,7 +11,7 @@
         <p><%= label_tag "Who are you meeting?" %>:</p>
         <p><%= select_tag(:user, options_for_select(@users)) %></p>
         <p><%= label_tag "Activity" %>:</p>
-        <p><%= text_field_tag 'activity' %></p>
+        <p><%= select_tag(:activity, options_for_select(@category_filter))%></p>
         <br></br>
         <%= submit_tag 'Find Us Something!' %>
         <br></br>
@@ -24,3 +24,4 @@
   </section>
   </div>
 </div>
+40.661774, -73.959614

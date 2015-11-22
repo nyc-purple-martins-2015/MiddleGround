@@ -75,7 +75,7 @@ color: #92C060;
 
 .login-link a {
   color: #032436;
-
+  z-index: 1;
   margin-left: 90%;
   max-height:100%;
   width:1%;
