@@ -18,7 +18,5 @@
           var pos = getLocation();
           showPosition(pos);
       });
-      })
+      });
 
-      });
-      });
