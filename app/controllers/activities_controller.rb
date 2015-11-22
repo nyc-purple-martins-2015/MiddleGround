@@ -34,7 +34,6 @@ class ActivitiesController < ApplicationController
 
   def show
     @activity = Activity.includes(:title, :address).find(params[:id])
-    byebug
   end
 
   private
