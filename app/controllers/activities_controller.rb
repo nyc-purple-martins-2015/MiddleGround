@@ -1,16 +1,9 @@
 class ActivitiesController < ApplicationController
-
-  def search
-    params = {
-      term: 'movies',
-      category_filter: 'movietheaters'
-    }
-    # render json: Yelp.client.search('Waterford, CT', params).businesses.map{|business| "#{business.name} #{business.location.display_address}"}.sample
-    render json: Yelp.client.search("cll= 40.7, 74.0", params).businesses.map {|business| business.name }
-  end
-
   def new
     @users = (User.all - [current_user]).map{|user| [user.username, user.id, {:'data-lat' => user.lat, :'data-long' => user.long}]}
+    yelp = File.read("vendor/assets/javascripts/categories.json")
+    categories = JSON.parse(yelp).select{ |business| business["parents"].include?(params[:'data-type'])}
+    @category_filter = categories.map {|category_filter| [category_filter["title"], category_filter["alias"]]}
   end
 
   def create
@@ -19,7 +12,7 @@ class ActivitiesController < ApplicationController
       term: params[:activity],
       radius_filter: 800
     }
-   destination = Yelp.client.search_by_coordinates(location, parameters).businesses.sample
+   destination = Yelp.client.search_by_coordinates(location, parameters).businesses.select { |business| !business.is_closed }.sample
    title = destination.name
    address = destination.location.display_address.join(", ")
    @activity = Activity.new(location: address, title: title, creator_id: current_user.id, friend_id: params[:friend].to_i)
