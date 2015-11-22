@@ -10,6 +10,7 @@ class ActivitiesController < ApplicationController
   end
 
   def new
+    @users = (User.all - [current_user]).map{|user| [user.username, user.id, {:'data-lat' => user.lat, :'data-long' => user.long}]}
   end
 
   def create
@@ -21,11 +22,11 @@ class ActivitiesController < ApplicationController
    destination = Yelp.client.search_by_coordinates(location, parameters).businesses.sample
    title = destination.name
    address = destination.location.display_address.join(", ")
-
-   @activity = Activity.new(location: address, title: title, creator_id: 1, friend_id: 2)
+   @activity = Activity.new(location: address, title: title, creator_id: current_user.id, friend_id: params[:friend].to_i)
     if @activity.save!
     # byebug
-      redirect_to activity_path(@activity.id)
+      @friend = User.find(@activity.friend_id)
+      render :show, layout:false
     else
       flash[:errors] = "Something went wrong with your request. Please try again."
       redirect_to new_activity_path
