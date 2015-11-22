@@ -21,11 +21,11 @@ class ActivitiesController < ApplicationController
    destination = Yelp.client.search_by_coordinates(location, parameters).businesses.sample
    title = destination.name
    address = destination.location.display_address.join(", ")
-   activity = Activity.new(title: title, address: address)
-    if activity.save
-    byebug
 
-      redirect_to activity_path(activity)
+   @activity = Activity.new(location: address, title: title, creator_id: 1, friend_id: 2)
+    if @activity.save!
+    # byebug
+      redirect_to activity_path(@activity.id)
     else
       flash[:errors] = "Something went wrong with your request. Please try again."
       redirect_to new_activity_path
@@ -33,7 +33,7 @@ class ActivitiesController < ApplicationController
   end
 
   def show
-    @activity = Activity.includes(:title, :address).find(params[:id])
+    @activity = Activity.find(params[:id])
   end
 
   private
