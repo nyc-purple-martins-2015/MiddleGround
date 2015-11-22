@@ -30,7 +30,7 @@ html {
 }
 
 .page-container {
-  /*background-size: cover;*/
+  background-size: cover;
   font-size:100%;
   padding-bottom:25%;
   padding-top:25%;
@@ -86,7 +86,7 @@ html {
   width: 100%;
   text-align: center;
   margin: auto;
-  background-color: purple;
+  /*background-color: purple;*/
 }
 
 .create-activity {
