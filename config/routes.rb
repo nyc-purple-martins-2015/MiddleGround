@@ -4,14 +4,14 @@ Rails.application.routes.draw do
 
   get '/search' =>'activities#search'
 
-  get 'register' => 'users#new', as: :register
-  get 'logout' => 'sessions#destroy', as: :logout
-  get 'login' => 'sessions#new', as: :login
-  post 'session_create' => 'sessions#create', as: :session_create
+  get '/register' => 'users#new', as: :register
+  get '/logout' => 'sessions#destroy', as: :logout
+  get '/login' => 'sessions#new', as: :login
+  post '/session_create' => 'sessions#create', as: :session_create
   get "/auth/auth0/callback" => "auth0#callback"
   get "/auth/failure" => "auth0#failure"
-  get 'edit' => 'users#edit'
-  put 'update' => 'users#update'
+  get '/edit' => 'users#edit'
+  patch '/users/:id' => 'users#update'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

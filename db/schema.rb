@@ -51,6 +51,8 @@ ActiveRecord::Schema.define(version: 20151121012143) do
     t.string   "email"
     t.string   "uid"
     t.string   "avatar"
+    t.string   "lat"
+    t.string   "long"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end

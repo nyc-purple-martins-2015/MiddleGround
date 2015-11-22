@@ -8,8 +8,8 @@
         <p><%= text_field_tag 'user_location' %></p>
         <p></p>
 
-        <p><%= label_tag "Friend's Location" %>:</p>
-        <p><%= text_field_tag 'friend_location' %></p>
+        <p><%= label_tag "Who are you meeting?" %>:</p>
+        <p><%= select_tag(:user, options_for_select(@users)) %></p>
         <p><%= label_tag "Activity" %>:</p>
         <p><%= text_field_tag 'activity' %></p>
         <br></br>

@@ -7,6 +7,8 @@ class CreateUsers < ActiveRecord::Migration
       t.string :email
       t.string :uid
       t.string :avatar
+      t.string :lat
+      t.string :long
       # t.attachment :avatar, default: { "../../app/assets/images/default_pic.png" }
 
       t.timestamps null:false
