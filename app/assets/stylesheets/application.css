@@ -1,3 +1,5 @@
+html{font-size:100%;}
+
 .page-container {
   background: #003C1C;
   position:fixed;
@@ -42,7 +44,7 @@
 }
 
 .create-activity{
-color: #92C060;
+  color: #92C060;
 }
 
 .logo img{
