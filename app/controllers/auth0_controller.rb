@@ -7,7 +7,7 @@ class Auth0Controller < ApplicationController
     user.avatar = auth_hash['info']['image']
     user.save!
     session[:user_id] = user.id
-    redirect_to root_path
+    redirect_to root_path ##take to another form page to get email and phone number
   end
 
   def failure

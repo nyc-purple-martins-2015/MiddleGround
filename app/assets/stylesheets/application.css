@@ -8,18 +8,29 @@
   height: 100%;
   border-style: solid;
   border-color:#032436;
+  border-width: .3em;
   text-align: center;
 }
 
 .content{
-width: 100%;
-text-align: center;
-border: 1% solid #032436;
+  padding-top:5%;
+  width: 100%;
+  /*max-height: 100%;*/
+  text-align: center;
+  /*border: 10px solid #032436;*/
 }
 
-html, body, #user-location {
-
+.create-activity h3 {
+  padding-bottom: .8em;
 }
+
+/*.create-activity {
+  border-style: solid;
+  border-color:#032436;
+  border-width: .3em;
+  margin-left: 30%;
+  margin-right: 30%;
+}*/
 
 #map_container{
   display: inline-block;
