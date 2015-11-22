@@ -1,36 +1,26 @@
-<div class="content">
-  <div class="create-activity">
-    <h3> Activity Finder </h3>
-    <!-- if there is a current user -->
-    <!-- friend has been selected -->
-    <!-- friend's address is known -->
-    <!-- code here for new activity -->
-    <div id="new-activity-form-container">
-      <%= form_tag ("/activities") %>
-      <%= label_tag 'Your Location' %>:
-      <%= text_field_tag 'user_location' %><br />
+<div class="page-container">
+  <div class="content">
+    <div class="create-activity">
+      <h3> Activity Finder </h3>
+      <div id="new-activity-form-container">
+        <%= form_tag ("/activities") %>
+        <p><%= label_tag 'Your Location' %>:</p>
+        <p><%= text_field_tag 'user_location' %></p>
+        <p></p>
 
-      <%= label_tag "Friend's Location" %>:
-      <%= text_field_tag 'friend_location' %><br />
-      <%= label_tag "Activity" %>:
-      <%= text_field_tag 'activity' %><br />
-      <%= submit_tag 'Find our Middle Ground!' %>
+        <p><%= label_tag "Friend's Location" %>:</p>
+        <p><%= text_field_tag 'friend_location' %></p>
+        <p><%= label_tag "Activity" %>:</p>
+        <p><%= text_field_tag 'activity' %></p>
+        <br></br>
+        <%= submit_tag 'Find our Middle Ground!' %>
+        <br></br>
+      </div>
     </div>
-
-    <div class="activity-sub-category">
-    </div>
-    <!-- else -->
-    <!-- code here for visitor -->
-    <!-- end -->
-    <!-- category already here as a variable that was passed in -->
-    <div class="activity-sub-category">
-    </div>
-
+  <section id="user-location">
+    <article>
+    </article>
+    <!-- <div id="map_container"></div> -->
+  </section>
   </div>
 </div>
-<section id="user-location">
-
-  <article>
-  </article>
-  <div id="map_container"></div>
-</section>

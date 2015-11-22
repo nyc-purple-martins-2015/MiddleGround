@@ -1,3 +1,39 @@
+.page-container {
+  background: #003C1C;
+  position:fixed;
+  margin:0;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  border-style: solid;
+  border-color:#032436;
+  text-align: center;
+}
+
+.content{
+width: 100%;
+text-align: center;
+border: 1% solid #032436;
+}
+
+html, body, #user-location {
+
+}
+
+#map_container{
+  display: inline-block;
+  border: .3em solid #032436;
+  /*width: 50%;*/
+  max-height: 100%;
+  /*margin-left:38%;*/
+  padding: 0;
+}
+
+.create-activity{
+color: #92C060;
+}
+
 .logo img{
   float: left;
   z-index: -1;
