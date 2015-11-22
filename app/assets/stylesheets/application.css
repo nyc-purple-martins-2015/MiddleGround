@@ -1,24 +1,64 @@
-html{font-size:100%;}
+/*body {*/
+  /*To hide the horizontal scroller appearing during the animation*/
+  /*overflow: hidden;*/
+  /*overflow-y: scroll;
+  overflow-x: hidden;
+*/
+ /* max-height:100%;
+      height:100%;
+      padding:0px;
+      margin:0px;
+      position:relative;*/
+
+      /*margin: 0;*/
+      /*padding: 0;*/
+      /*border: 2px solid #000000;*/
+     /* border-width: 10px;
+      border-style: solid;
+      border-color: blue;*/
+/*}*/
+
+html {
+  font-family: 'Montserrat', sans-serif;
+  font-size:100%;
+  max-height:100%;
+  width: 100%;
+  text-align:center;
+  background-color: #E8E8E8;
+}
 
 .page-container {
-  background: #003C1C;
-  position:fixed;
-  margin:0;
-  top:0;
+  font-weight: bold;
+  /*background-color: #E8E8E8;*/
+  display: inline-block;
+  background: #28784D;
+  border-style: solid;
+  border-width: .3em;
+  border-color:#032436;
+  max-height: 100%;
+  width:50%;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px #888888;
+  text-align:center;
+  color:#032436;
+  margin:auto;
+
+  /*position:fixed;*/
+  /*top:0;
   left:0;
   width: 100%;
   height: 100%;
-  border-style: solid;
-  border-color:#032436;
-  border-width: .3em;
-  text-align: center;
+  text-align: center;*/
 }
 
 .content{
-  padding-top:5%;
-  width: 100%;
+  /*background: #003C1C;*/
+  /*padding-top:5%;*/
+  /*width: 100%;*/
+/*  border: 30%;
+*/  /*margin-right: 25%;*/
   /*max-height: 100%;*/
-  text-align: center;
+  /*text-align: center;*/
   /*border: 10px solid #032436;*/
 }
 
@@ -35,82 +75,70 @@ html{font-size:100%;}
 }*/
 
 #map_container{
-  display: inline-block;
+  /*display: inline-block;
   border: .3em solid #032436;
-  /*width: 50%;*/
+
   max-height: 100%;
-  /*margin-left:38%;*/
-  padding: 0;
+
+  padding: 0;*/
 }
 
 .create-activity{
-  color: #92C060;
+  /*color: #92C060;*/
 }
 
 .logo img{
-  float: left;
+  /*float: left;
   z-index: -1;
   max-height:100%;
   width:25%;
   display: block;
-  margin-left: 0%;
+  margin-left: 0%;*/
 }
 .alien img{
-  max-height:100%;
+  /*max-height:100%;
   width:20%;
   display: block;
-  margin-left: 73%
+  margin-left: 73%;*/
 }
 
 .white-cloud img{
-  position: relative;
+  /*position: relative;
   max-height:100%;
   width:20%;
   -webkit-transform: scale(0.75);
   -moz-transform: scale(0.75);
   transform: scale(0.75);
-  opacity: 0.7;
+  opacity: 0.7;*/
   /*-webkit-animation: moveclouds 17s linear infinite;
   -moz-animation: moveclouds 17s linear infinite;
   -o-animation: moveclouds 17s linear infinite;*/
 }
 
 .login-link a {
-  color: #032436;
+  /*color: #032436;
 
   margin-left: 90%;
   max-height:100%;
   width:1%;
-  font-size: auto;
+  font-size: auto;*/
 }
 
 a:hover {
-    color: #032436;
+    /*color: #032436;*/
 }
 
 a:link {
-  text-decoration: none;
+  /*text-decoration: none;*/
   /*color: #032436;*/
 }
 
-*{ margin: 0; padding: 0;}
+/**{ margin: 0; padding: 0;}*/
 
-body {
-  /*To hide the horizontal scroller appearing during the animation*/
-  /*overflow: hidden;*/
-  overflow-y: scroll;
-  overflow-x: hidden;
-
-  max-height:100%;
-      height:100%;
-      padding:0px;
-      margin:0px;
-      position:relative;
-}
 
 #clouds{
   /*background-size: contain;*/
-  position:fixed;
+  /*position:fixed;
   margin:0;
   top:0;
   left:0;
@@ -119,7 +147,7 @@ body {
 
   padding-top:1%;
   padding-left: 1%;
-  background: #c9dbe9;
+  background: #c9dbe9;*/
   /*background: -webkit-linear-gradient(top, #c9dbe9 0%, #fff 100%);*/
   /*background: -linear-gradient(top, #c9dbe9 0%, #fff 100%);*/
   /*background: -moz-linear-gradient(top, #c9dbe9 0%, #fff 100%);*/
@@ -170,18 +198,18 @@ body {
   /*left: 200px;*/
 
 
-  width:100%;
+  /*width:100%;
   max-height: 100%;
   -webkit-transform: scale(0.75);
   -moz-transform: scale(0.75);
-  transform: scale(0.75);
+  transform: scale(0.75);*/
   opacity: 0.7; /*opacity proportional to the size*/
 
   /*Speed will also be proportional to the size and opacity*/
   /*More the speed. Less the time in 's' = seconds*/
-  -webkit-animation: moveclouds 20s linear infinite;
+  /*-webkit-animation: moveclouds 20s linear infinite;
   -moz-animation: moveclouds 20s linear infinite;
-  -o-animation: moveclouds 20s linear infinite;
+  -o-animation: moveclouds 20s linear infinite;*/
 }
 
 /*variable speed, opacity, and position of clouds for realistic effect*/
@@ -259,21 +287,21 @@ body {
 
 .x6 {
   /*left: -150px; top: -650px;*/
-  z-index: -1;
+  /*z-index: -1;
   width:100%;
   max-height: 100%;
   /*margin-left:50%;*/
-  -webkit-transform: scale(0.8);
+  /*-webkit-transform: scale(0.8);
   -moz-transform: scale(0.8);
-  transform: scale(0.8);
+  transform: scale(0.8);*/*/
   opacity: 0.7; /*opacity proportional to the size*/
 
-  -webkit-animation: moveclouds 20s linear infinite;
+  /*-webkit-animation: moveclouds 20s linear infinite;
   -moz-animation: moveclouds 20s linear infinite;
-  -o-animation: moveclouds 20s linear infinite;
+  -o-animation: moveclouds 20s linear infinite;*/
 }
 
-@-webkit-keyframes moveclouds {
+/*@-webkit-keyframes moveclouds {
   0% {margin-left: 100%;}
   100% {margin-left: -100%;}
 }
