@@ -22,9 +22,10 @@ class ActivitiesController < ApplicationController
    title = destination.name
    address = destination.location.display_address.join(", ")
    activity = Activity.new(title: title, address: address)
-    # byebug
     if activity.save
-      redirect_to activity_path
+    byebug
+
+      redirect_to activity_path(activity)
     else
       flash[:errors] = "Something went wrong with your request. Please try again."
       redirect_to new_activity_path
@@ -32,7 +33,8 @@ class ActivitiesController < ApplicationController
   end
 
   def show
-    @activity = Activity.find(params[:id])
+    @activity = Activity.includes(:title, :address).find(params[:id])
+    byebug
   end
 
   private
