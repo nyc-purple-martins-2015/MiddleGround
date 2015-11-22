@@ -21,6 +21,9 @@ class ActivitiesController < ApplicationController
     @activity = Activity.find(params[:id])
   end
 
+  def direction
+  end
+
   private
 
   def activity_params
