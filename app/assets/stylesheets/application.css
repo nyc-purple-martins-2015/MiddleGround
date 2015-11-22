@@ -22,26 +22,34 @@ html {
   font-family: 'Montserrat', sans-serif;
   font-size:100%;
   max-height:100%;
-  width: 100%;
+  max-width: 100%;
   text-align:center;
   background-color: #E8E8E8;
+
+  /*height: 100vh;*/
 }
 
 .page-container {
-  font-weight: bold;
-  /*background-color: #E8E8E8;*/
+  /*background-size: cover;*/
+  font-size:100%;
+  padding-bottom:25%;
+  padding-top:25%;
+  padding-left: 15%;
+  padding-right:15%;
+  max-height: 100%;
+  width:75%;
   display: inline-block;
+  text-align:center;
+  margin:10%;
+
+  font-weight: bold;
   background: #28784D;
   border-style: solid;
   border-width: .3em;
   border-color:#032436;
-  max-height: 100%;
-  width:50%;
-  border-radius: 10px;
+  border-radius: 15px;
   box-shadow: 5px 5px 5px #888888;
-  text-align:center;
   color:#032436;
-  margin:auto;
 
   /*position:fixed;*/
   /*top:0;
@@ -52,7 +60,13 @@ html {
 }
 
 .content{
+  display:inline-block;
+  max-height: 100%;
+  width: 75%;
+  text-align: center;
   /*background: #003C1C;*/
+  margin:auto;
+
   /*padding-top:5%;*/
   /*width: 100%;*/
 /*  border: 30%;
@@ -62,28 +76,45 @@ html {
   /*border: 10px solid #032436;*/
 }
 
-.create-activity h3 {
-  padding-bottom: .8em;
+.content h3 {
+  /*padding-bottom: 5%;*/
 }
 
-/*.create-activity {
-  border-style: solid;
+#user-location {
+  display:inline-block;
+  max-height: 100%;
+  width: 100%;
+  text-align: center;
+  margin: auto;
+  background-color: purple;
+}
+
+.create-activity {
+  /*display:inline-block;*/
+  max-height: 100%;
+  /*width: 100%;*/
+  text-align:center;
+  margin:auto;
+  /*border-style: solid;
   border-color:#032436;
-  border-width: .3em;
-  margin-left: 30%;
-  margin-right: 30%;
-}*/
+  border-width: 1%;*/
+
+  /*margin-left: 30%;*/
+  /*margin-right: 30%;*/
+}
 
 #map_container{
-  /*display: inline-block;
+  display: inline-block;
   border: .3em solid #032436;
 
   max-height: 100%;
+  max-width: 95%;
+  margin: auto;
 
-  padding: 0;*/
+  /*padding: 0;*/
 }
 
-.create-activity{
+.new-activity-form-container {
   /*color: #92C060;*/
 }
 
