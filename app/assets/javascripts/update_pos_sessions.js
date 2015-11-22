@@ -17,13 +17,9 @@
         $('#location_session').on('click',function(){
           var pos = getLocation();
           showPosition(pos);
-<<<<<<< HEAD
-<<<<<<< HEAD
       });
-=======
       })
->>>>>>> Update Gemfile for heroku
-=======
       });
->>>>>>> Add semicolon
       });
+        }
+      }
