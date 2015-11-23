@@ -20,10 +20,6 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
   });
 }
 
-// var control = document.getElementById('floating-panel');
-//   control.style.display = 'block';
-//   map.controls[google.maps.ControlPosition.TOP_CENTER].push(control);
-
 document.addEventListener('DOMContentLoaded', function(){
   $("#mode").change(function(event){
 
