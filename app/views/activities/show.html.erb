@@ -2,8 +2,9 @@
   <div class="content">
     <div class="activity-information-container">
       <div class="details-container">
-        <p>You are going to <%= @activity.title %> with </p>
-        <!-- You are going to ***place*** with ***friend*** -->
+        <p>You are going to <%= @activity.title %> with <%=@friend.username%></p>
+
+        <p><%=@activity.location%></p>
       </div>
       <div class="send-request-form">
         <!-- Send this request to ***friend***? Veto option -->
