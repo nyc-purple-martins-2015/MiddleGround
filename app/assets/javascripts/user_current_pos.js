@@ -37,7 +37,7 @@ $(document).ready(function(){
     event.preventDefault();
     var friendLat = $(this).find('#user').children().attr('data-lat');
     var friendLong = $(this).find('#user').children().attr('data-long');
-    var friendId = $(this).find('#user').children().val();
+    var friendId = $(this).find("select#user").val();
     var latitude = lat;
     var longitude = lng;
     var myLocation = new google.maps.LatLng({lat: latitude, lng: longitude});

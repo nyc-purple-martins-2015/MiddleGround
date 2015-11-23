@@ -1,6 +1,6 @@
 class ActivitiesController < ApplicationController
   def new
-    @users = (User.all - [current_user]).map{|user| [user.username, user.id, {:'data-lat' => user.lat, :'data-long' => user.long}]}
+    @users = (current_user.friends).map{|user| [user.username, user.id, {:'data-lat' => user.lat, :'data-long' => user.long, class: "user-#{user.id}"}]}
     @category_filter = Activity.filter_categories(categories)
   end
 

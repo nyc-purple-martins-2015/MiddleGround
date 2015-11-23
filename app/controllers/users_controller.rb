@@ -10,9 +10,9 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = current_user
-    available_friends = User.all.select { |user| (!user.friends.include?(current_user) && user != current_user) }
+    @user = User.find(params[:id])
+    available_friends = User.all.select { |user| (!user.friends.include?(@user) && user != @user) }
     @registered_users = available_friends.map { |user| [user.username, user.id]}
-    @friendships_pending = current_user.pending_friendships
+    @friendships_pending = @user.pending_friendships
   end
 end
