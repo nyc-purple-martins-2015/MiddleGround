@@ -42,13 +42,11 @@ $(document).ready(function(){
     var friendId = $(this).find('#user').children().val();
     var latitude = lat;
     var longitude = lng;
-    debugger
     var myLocation = new google.maps.LatLng({lat: latitude, lng: longitude});
     var friendLocation = new google.maps.LatLng({lat: parseFloat(friendLat), lng: parseFloat(friendLong)});
     var midpoint = google.maps.geometry.spherical.interpolate(myLocation, friendLocation, 0.5);
     var activity = $(this).find($("#activity")).val();
     var postRoute =$(this).children().attr("action");
-    debugger
     var newActivityRequest = $.ajax({
       method: 'post',
       url: postRoute,
@@ -63,5 +61,10 @@ $(document).ready(function(){
     newActivityRequest.done(function(newActivityHTML){
       $(".page-container").replaceWith(newActivityHTML);
     });
-  });
+    newActivityRequest.fail(function(response){
+      $(".error-message").empty();
+      $(".error-message").html("I'm sorry, there were no activities that match your criteria. Please try again");
+    });
+    }
+  );
 });
