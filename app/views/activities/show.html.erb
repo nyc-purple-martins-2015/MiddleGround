@@ -3,13 +3,15 @@
     <div class="activity-information-container">
       <div class="details-container">
         <p>You are going to <%= @activity.title %> with <%=@friend.username%></p>
-        <!-- You are going to ***place*** with ***friend*** -->
+
+        <p><%=@activity.location%></p>
       </div>
       <div class="send-request-form">
         <!-- Send this request to ***friend***? Veto option -->
       </div>
       <div class="map-directions-container">
           <!-- You are here, ***friend*** is there, ***activity*** is here -->
+          <%= link_to 'Get Directions', directions_path, {:'data-destination' => @activity.location, :class => "destination", :'data-origin-lat' => current_user.lat, :'data-origin-long' => current_user.long}%>
       </div>
     </div>
   </div>
