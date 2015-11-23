@@ -8,7 +8,7 @@ class ActivitiesController < ApplicationController
     destination = business(Yelp.client.search_by_coordinates(midpoint_location, search_parameters))
     byebug
     address = destination.location.display_address.join(", ")
-    @activity = Activity.new(location: address, title: destination.name, creator_id: current_user.id, friend_id: params[:friend].to_i)
+    @activity = Activity.new(location: address, title: destination.name, creator_id: current_user.id, friend_id: params[:friend].to_i, lat: destination.lat, long: destination.lng)
     if @activity.save!
       @friend = User.find(@activity.friend_id)
       render :show, layout:false
