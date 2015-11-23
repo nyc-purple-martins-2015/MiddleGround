@@ -17,7 +17,9 @@
 </head>
 <body>
 <div class="navbar">
+  <%= link_to 'Home', root_path  %> |
   <% if logged_in? %>
+<a href="/users/<%=current_user.id%>"><%=current_user.username%></a> |
   <span class="logout-link">
 <%= link_to "Logout", logout_path %>
 </span>

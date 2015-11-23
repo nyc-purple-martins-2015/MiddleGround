@@ -5,11 +5,12 @@
   <div class="favorite-spots"></div>
   <div class="recent-activities-container">
     <h3>Recent MiddleGround Activities </h3>
-    <% current_user.activities[0..4].each do |s| %>
+    <% @user.activities.last(5).each do |s| %>
       <p><%=s.title%></p>
+      <% if s.rated_by_user(@user) %>
       <div class="ratings">
-      <button class="rating-button">Rate It</button>
 
+      <button class="rating-button">Rate It</button>
         <div class='rate-form'>
           <%= form_for Vote.new do |f|%>
           <%=f.hidden_field :value, :value => 1 %>
@@ -17,13 +18,14 @@
             <%= f.submit 'Loved It' %>
           <%end%>
           <%= form_for Vote.new do |f|%>
-          <%=f.hidden_field :value, :value => -1 %>
-          <%=f.hidden_field :activity_id, :value => s.id %>
+            <%=f.hidden_field :value, :value => -1 %>
+            <%=f.hidden_field :activity_id, :value => s.id %>
             <%= f.submit 'Hated It' %>
           <%end%>
-        </div>
-      </div>
 
+        </div>
+      <%end%>
+      </div>
     <%end%>
   </div>
 
