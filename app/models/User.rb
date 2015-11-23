@@ -18,6 +18,10 @@ class User < ActiveRecord::Base
   def activities
     self.created_activities + self.friend_activities
   end
+
+  def pending_friendships
+    self.accepted_friendships.where(pending: 1)
+  end
 end
 
 

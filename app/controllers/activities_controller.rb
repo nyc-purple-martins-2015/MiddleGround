@@ -6,6 +6,7 @@ class ActivitiesController < ApplicationController
 
   def create
     destination = business(Yelp.client.search_by_coordinates(midpoint_location, search_parameters))
+    byebug
     address = destination.location.display_address.join(", ")
     @activity = Activity.new(location: address, title: destination.name, creator_id: current_user.id, friend_id: params[:friend].to_i)
     if @activity.save!
