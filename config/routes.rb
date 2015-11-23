@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :users, only: [:create, :show]
 
   get '/search' =>'activities#search'
+  get '/directions' =>'activities#direction'
 
   get '/register' => 'users#new', as: :register
   get '/logout' => 'sessions#destroy', as: :logout
