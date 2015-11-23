@@ -57,12 +57,15 @@ $(document).ready(function(){
       datatype: 'json'
     });
     newActivityRequest.done(function(newActivityHTML){
-      $(".page-container").replaceWith(newActivityHTML);
+      $(".page-container").html(newActivityHTML);
     });
     newActivityRequest.fail(function(response){
       $(".error-message").empty();
       $(".error-message").html("I'm sorry, there were no activities that match your criteria. Please try again");
     });
-    }
-  );
+    });
+  // $(".page-container").on('click', 'a.destination', function(event){
+  //   event.preventDefault();
+  //   debugger
+  // })
 });

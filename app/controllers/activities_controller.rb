@@ -22,6 +22,8 @@ class ActivitiesController < ApplicationController
   end
 
   def direction
+    byebug
+    render :direction
   end
 
   private
