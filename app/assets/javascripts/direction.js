@@ -1,6 +1,5 @@
 var DirectionMap =  function(position,domMap){
   this.position = position;
-  debugger
   this.map = new google.maps.Map(document.getElementById('map-image'),{center: position, zoom: 14});
 };
 
