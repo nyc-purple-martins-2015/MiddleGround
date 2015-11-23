@@ -1,5 +1,7 @@
 <%= form_for @user do |f| %>
 <div class="location-form">
+<!-- think about putting these visible but disabled ? -->
+
     <%= f.hidden_field :lat , id: 'lat', value: '' %>
     <%= f.hidden_field :long, id:'long', value: '' %>
 </div>

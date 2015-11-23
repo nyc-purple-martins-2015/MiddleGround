@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
   has_many :votes
 
   def friends
+    # I'll look a this to see can we do in one query with a union
     self.accepted_friends.where('friendships.pending = ?', 0) + self.requested_friends.where('friendships.pending = ?', 0)
   end
 

@@ -1,3 +1,5 @@
+// Fix the indentation here
+// Or delete if you don't use it
       $(document).ready(function() {
 
         var lat = document.getElementById("lat");

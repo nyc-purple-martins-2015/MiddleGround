@@ -4,6 +4,8 @@ class VotesController < ApplicationController
     if vote.save
       redirect_to user_path(current_user)
     else
+      # More usual to use 422 - unprocessable entity
+      # 400 suggests the request was badly formed
       status 400
     end
   end

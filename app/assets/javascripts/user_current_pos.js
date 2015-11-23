@@ -33,18 +33,20 @@ $(document).ready(function(){
       title:"You are here!"
     });
   }
+
   $("#new-activity-form-container").on('submit', function(event){
     event.preventDefault();
-    var friendLat = $(this).find('#user').children().attr('data-lat');
-    var friendLong = $(this).find('#user').children().attr('data-long');
-    var friendId = $(this).find("select#user").val();
-    var latitude = lat;
-    var longitude = lng;
-    var myLocation = new google.maps.LatLng({lat: latitude, lng: longitude});
-    var friendLocation = new google.maps.LatLng({lat: parseFloat(friendLat), lng: parseFloat(friendLong)});
+    /*
+      {id: 23, lat: 41, lng:-72}
+    */
+    var myLocation = new google.maps.LatLng({lat: lat, lng: lng});
+    var friend = $('option:selected', this).attr('data');
+    var friendLocation = new google.maps.LatLng({lat: parseFloat(friend.lat), lng: parseFloat(friend.long)});
     var midpoint = google.maps.geometry.spherical.interpolate(myLocation, friendLocation, 0.5);
-    var activity = $(this).find($("#activity")).val();
-    var postRoute =$(this).children().attr("action");
+
+    var activity = $("#activity").val();
+    var postRoute =$('form').attr("action");
+
     var newActivityRequest = $.ajax({
       method: 'post',
       url: postRoute,
@@ -52,13 +54,15 @@ $(document).ready(function(){
         midlat: midpoint.lat().toFixed(4),
         midlong: midpoint.lng().toFixed(4),
         activity: activity,
-        friend: friendId
+        friend: friend.id
       },
       datatype: 'json'
     });
+
     newActivityRequest.done(function(newActivityHTML){
       $(".page-container").replaceWith(newActivityHTML);
     });
+    
     newActivityRequest.fail(function(response){
       $(".error-message").empty();
       $(".error-message").html("I'm sorry, there were no activities that match your criteria. Please try again");

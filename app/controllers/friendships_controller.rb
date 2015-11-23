@@ -8,6 +8,7 @@ class FriendshipsController < ApplicationController
     end
   end
 
+  #if this is the only update possible, maybe rename it accept?
   def update
     friendship = Friendship.find(params[:id])
     friendship.update_attributes(pending: 0)

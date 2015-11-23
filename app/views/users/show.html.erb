@@ -5,6 +5,7 @@
   <div class="favorite-spots"></div>
   <div class="recent-activities-container">
     <h3>Recent MiddleGround Activities </h3>
+    <!-- Maybe add recent_activities as a method on user -->
     <% @user.activities.last(5).each do |s| %>
       <p><%=s.title%></p>
       <% if s.rated_by_user(@user) %>

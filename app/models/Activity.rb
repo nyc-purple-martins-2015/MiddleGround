@@ -5,10 +5,12 @@ class Activity < ActiveRecord::Base
   belongs_to :friend, class_name: 'User'
   has_many :votes
 
+  #Think of a better name for this
   def self.filter_categories(category)
     category.map {|category_filter| [category_filter["title"], category_filter["alias"]]}
   end
 
+  #Negate the name / logic of this 
   def rated_by_user(user)
       self.votes.where(user_id: user.id).empty?
   end
