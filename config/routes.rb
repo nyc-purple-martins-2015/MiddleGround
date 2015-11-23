@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'homepage#index'
-  resources :users, only: [:create, :show]
+  resources :users, only: [:create, :show, :update]
 
   get '/search' =>'activities#search'
   get '/directions' =>'activities#direction'
@@ -9,12 +9,16 @@ Rails.application.routes.draw do
   get '/logout' => 'sessions#destroy', as: :logout
   get '/login' => 'sessions#new', as: :login
   post '/session_create' => 'sessions#create', as: :session_create
+
   get "/auth/auth0/callback" => "auth0#callback"
   get "/auth/failure" => "auth0#failure"
   get '/edit' => 'users#edit'
+
   patch '/users/:id' => 'users#update'
 
 
+resources :friendships, only: [:create, :update, :destroy]
+resources :votes, only: [:create]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -41,7 +45,7 @@ Rails.application.routes.draw do
   #       get 'sold'
   #     end
   #   end
-resources :activities, only: [:show, :new, :create, ]
+resources :activities, only: [:show, :new, :create ]
   # Example resource route with sub-resources:
   #   resources :products do
   #     resources :comments, :sales

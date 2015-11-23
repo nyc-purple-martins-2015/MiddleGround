@@ -4,13 +4,63 @@
   </div>
   <div class="favorite-spots"></div>
   <div class="recent-activities-container">
-    <!-- list of 5 most recent activities -->
+    <h3>Recent MiddleGround Activities </h3>
+    <% current_user.activities[0..4].each do |s| %>
+      <p><%=s.title%></p>
+      <div class="ratings">
+      <button class="rating-button">Rate It</button>
+
+        <div class='rate-form'>
+          <%= form_for Vote.new do |f|%>
+          <%=f.hidden_field :value, :value => 1 %>
+          <%=f.hidden_field :activity_id, :value => s.id %>
+            <%= f.submit 'Loved It' %>
+          <%end%>
+          <%= form_for Vote.new do |f|%>
+          <%=f.hidden_field :value, :value => -1 %>
+          <%=f.hidden_field :activity_id, :value => s.id %>
+            <%= f.submit 'Hated It' %>
+          <%end%>
+        </div>
+      </div>
+
+    <%end%>
   </div>
+
   <div class="friends-list-container"></div>
   <div class="edit-profile-container">
     <!-- form for editing profile -->
     <div class="add-address-form-container">
       <!-- form to add address to profile -->
+    </div>
+    <div class="friend-form-container">
+       <h3> Find Friends </h3>
+      <%= form_for Friendship.new do |f| %>
+      <%= f.select(:acceptor_id, options_for_select(@registered_users))%>
+      <%= f.submit "Send Friend Request" %>
+      <%end%>
+    </div>
+
+    <div class="pending-friendships">
+      <% unless @friendships_pending.empty? %>
+      <h3> Pending Friend Requests </h3>
+      <% @friendships_pending.each do |p| %>
+      <p><%= p.requester.username %></p>
+      <%= form_for p, :method => :patch do |f|%>
+        <%= f.submit 'Accept Friend Request' %>
+        <%end%>
+      <%= form_for p, :method => :delete do |f|%>
+        <%= f.submit 'Reject Friend Request' %>
+        <%end%>
+      <% end %>
+      <%end%>
+    </div>
+
+    <div class="friends-container">
+      <h3> Your Friends </h3>
+      <% @user.friends.each do |friend| %>
+        <p><%= friend.username %></p>
+      <% end %>
     </div>
   </div>
 </div>

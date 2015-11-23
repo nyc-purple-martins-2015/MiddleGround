@@ -9,6 +9,9 @@ html {
   /*height: 100vh;*/
 }
 
+.rate-form {
+  display: none;
+}
 .page-container {
   background-size: cover;
   font-size:100%;
