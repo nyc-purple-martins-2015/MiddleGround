@@ -15,7 +15,6 @@ $(document).ready(function(){
       lng = position.coords.longitude;
       $("#lat").val(lat);
       $("#long").val(lng);
-
     var coords = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
     var options = {
       zoom: 15,
@@ -34,7 +33,6 @@ $(document).ready(function(){
       title:"You are here!"
     });
   }
-
   $("#new-activity-form-container").on('submit', function(event){
     event.preventDefault();
     var friendLat = $(this).find('#user').children().attr('data-lat');
