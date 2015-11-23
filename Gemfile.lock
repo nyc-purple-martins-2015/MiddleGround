@@ -62,7 +62,7 @@ GEM
     factory_girl_rails (4.5.0)
       factory_girl (~> 4.5.0)
       railties (>= 3.0.0)
-    faker (1.5.0)
+    faker (1.6.1)
       i18n (~> 0.5)
     faraday (0.9.2)
       multipart-post (>= 1.2, < 3)
@@ -169,19 +169,11 @@ GEM
       actionpack (>= 3.0, < 4.3)
       activesupport (>= 3.0, < 4.3)
       railties (>= 3.0, < 4.3)
-<<<<<<< HEAD
       rspec-core (~> 3.4.0)
       rspec-expectations (~> 3.4.0)
       rspec-mocks (~> 3.4.0)
       rspec-support (~> 3.4.0)
     rspec-support (3.4.1)
-=======
-      rspec-core (~> 3.3.0)
-      rspec-expectations (~> 3.3.0)
-      rspec-mocks (~> 3.3.0)
-      rspec-support (~> 3.3.0)
-    rspec-support (3.3.0)
->>>>>>> edit ruby version in gemfile
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
