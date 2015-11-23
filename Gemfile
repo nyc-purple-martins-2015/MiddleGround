@@ -1,15 +1,17 @@
 source 'https://rubygems.org'
+ruby "2.2.0"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
+# gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
+gem 'uglifier', '>= 1.3.0'
+
 # gem 'uglifier', '>= 1.3.0'
-# Use CoffeeScript for .coffee assets and views
-# gem 'coffee-rails', '~> 4.1.0'
+
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -36,14 +38,14 @@ gem 'geokit-rails'
 group :test do
   gem 'simplecov', :require => false
   gem 'capybara'
+  gem 'shoulda-matchers'
+  gem 'factory_girl_rails'
 end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'rspec-rails'
   gem 'faker'
-  gem 'shoulda-matchers'
-  gem 'factory_girl_rails'
   gem 'launchy'
   gem 'database_cleaner'
   gem 'awesome_print'
@@ -56,3 +58,4 @@ group :development do
   gem 'rails_12factor'
 end
 
+gem 'rails_12factor', group: :production
