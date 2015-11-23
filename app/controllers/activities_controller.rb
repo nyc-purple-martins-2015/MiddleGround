@@ -12,8 +12,7 @@ class ActivitiesController < ApplicationController
       @friend = User.find(@activity.friend_id)
       render :show, layout:false
     else
-      flash[:errors] = "Something went wrong with your request. Please try again."
-      redirect_to new_activity_path
+      status 400
     end
   end
 
@@ -35,6 +34,7 @@ class ActivitiesController < ApplicationController
   end
 
   def categories
+    params[:'data-type'] = ['active', 'restaurants', 'arts', 'bars'].sample unless params[:'data-type']
     JSON.parse(yelp).select{ |business| business["parents"].include?(params[:'data-type'])}
   end
 
