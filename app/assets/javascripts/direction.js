@@ -20,20 +20,18 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
   });
 }
 
-// var control = document.getElementById('floating-panel');
-//   control.style.display = 'block';
-//   map.controls[google.maps.ControlPosition.TOP_CENTER].push(control);
-
 document.addEventListener('DOMContentLoaded', function(){
   $("#mode").change(function(event){
-
     var domMap = $('map-image');
-    var directionsDisplay = new google.maps.DirectionsRenderer;
-    var directionsService = new google.maps.DirectionsService;
+    var directionsDisplay = new google.maps.DirectionsRenderer();
+    var directionsService = new google.maps.DirectionsService();
     var map = new DirectionMap(new google.maps.LatLng({lat: 40.7117, lng: -74.005}), domMap);
+    var direction = $("#right-panel");
+    direction.html("");
+    directionsDisplay.setPanel(direction[0]);
     directionsDisplay.setMap(map.map);
     calculateAndDisplayRoute(directionsService, directionsDisplay);
-  })
-})
+  });
+});
 
 
