@@ -6,7 +6,6 @@ function getLocation() {
     }
 }
 function showPosition(position) {
-
     $("#getGeolocation").html("Latitude: " + position.coords.latitude +
     "<br>Longitude: " + position.coords.longitude);
 }
