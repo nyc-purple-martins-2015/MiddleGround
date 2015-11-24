@@ -12,11 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require foundation
 //= require_tree .
 
-$(document).ready(function(){
-  $(".rating-button").on('click', function(event){
-    $(this).parents(".ratings").children(".rate-form").slideToggle();
-  })
-});
-
+$(function(){ $(document).foundation(); });
