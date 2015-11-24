@@ -1,23 +1,28 @@
 
-<div id="clouds">
-  <span class="logo">
-    <%= image_tag "big_logo.png" %>
-  </span>
+<div class="row">
 
-  <span class="white-cloud">
-    <%= link_to image_tag("park.jpg"), new_activity_path({:'data-type' => 'active'})%>
-  </span>
+  <div class="large-4 large-centered columns">
+      <%= link_to image_tag("park.jpg"), new_activity_path({:'data-type' => 'active'})%>
+  </div>
 
-  <span class="white-cloud">
-    <%= link_to image_tag("restaurant.jpg"), new_activity_path({:'data-type' => 'restaurants'}) %>
-  </span>
-
-  <span class="white-cloud">
-      <%= link_to image_tag("see_something.jpg"), new_activity_path({:'data-type' => 'arts'}) %>
-  </span>
-
-  <span class="white-cloud">
-    <%= link_to image_tag("DrinkSomethingCloud.png"), new_activity_path({:'data-type' => 'bars'}) %>
-  </span>
-
+</div>
+<div id="row">
+  <div class="large-4 columns">
+      <p><%= link_to image_tag("drink_something.jpg"), new_activity_path({:'data-type' => 'bars'}) %></p>
+  </div>
+  <div class="large-4 columns">
+      <p><%= link_to image_tag("new_logo.png"), new_activity_path %></p>
+  </div>
+  <div class="large-4 columns">
+      <p><%= link_to image_tag("restaurant.jpg"), new_activity_path({:'data-type' => 'restaurants'}) %></p>
+  </div>
+</div>
+<div class="row">
+  <div class="large-4 columns">
+  </div>
+  <div class="large-4 columns">
+      <p><%= link_to image_tag("see_something.jpg"), new_activity_path({:'data-type' => 'arts'}) %></p>
+  </div>
+  <div class="large-4 columns">
+  </div>
 </div>
