@@ -10,6 +10,15 @@ html {
 
 }
 
+ html body {
+  background-color: #92BF20;
+}
+
+.center {
+  max-height: 100%;
+  width:65%;
+  margin: 0 auto;
+}
 .rate-form {
   display: none;
 }
