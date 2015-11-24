@@ -16,16 +16,16 @@
 </head>
 
 <body>
-  <div class="top-bar">
+  <nav class="top-bar" data-top-bar role="navigation" class="row">
     <div class="top-bar-left">
-      <ul class="dropdown-menu" data-dropdown-menu>
-        <li class="menu-text">
+      <ul class="title-area">
+        <li class="name">
           <%= link_to 'Home', root_path  %>
         </li>
       </ul>
     </div>
-    <div class="top-bar-right">
-      <ul class="menu">
+    <section class="top-bar-section">
+      <ul class="right">
       <% if logged_in? %>
         <li><a href="/users/<%=current_user.id%>"><%=current_user.username%></a></li>
         <li><span class="logout-link">
@@ -37,8 +37,8 @@
         </span></li>
       <% end %>
     </ul>
-    </div>
-  </div>
+    </section>
+  </nav>
 
   <%= yield %>
 
