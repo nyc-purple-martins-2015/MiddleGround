@@ -1,24 +1,20 @@
 html {
-  font-family: 'Montserrat', sans-serif;
+  /*font-family: 'Montserrat', sans-serif;
   font-size:100%;
   max-height:100%;
   max-width: 100%;
   text-align:center;
   background-color: #E8E8E8;
+*/
 
-  /*height: 100vh;*/
 }
 
 .rate-form {
   display: none;
 }
 .page-container {
-  background-size: cover;
+/*  background-size: cover;
   font-size:100%;
- /* padding-bottom:25%;
-  padding-top:25%;
-  padding-left: 15%;
-  padding-right:15%;*/
   padding: 1%;
   max-height: 100%;
   width:75%;
@@ -35,179 +31,125 @@ html {
   border-color:#032436;
   border-radius: 15px;
   box-shadow: 5px 5px 5px #888888;
-  color:#032436;
+  color:#032436;*/
 
-
-  /*position:fixed;*/
-  /*top:0;
-  left:0;
-  width: 100%;
-  height: 100%;
-  text-align: center;*/
 }
 
 .content{
-  display:inline-block;
+ /* display:inline-block;
 
   font-size:100%;
   max-height: 75%;
   width: 75%;
-  text-align: center;
-  /*border: .3em solid #032436;*/
+  text-align: center;*/
 }
 
 #user-location {
-  display:inline-block;
+ /* display:inline-block;
   max-height: 100%;
   width: 100%;
-  /*background-size: cover;*/
   text-align: center;
-  margin: auto;
+  margin: auto;*/
 }
 
 
-  /*max-height: 100%;
-  width: 75%;
-  text-align: center;*/
-  /*background: #003C1C;*/
-  /*margin:auto;*/
 
-  /*padding-top:5%;*/
-  /*width: 100%;*/
-/*  border: 30%;
-*/  /*margin-right: 25%;*/
-  /*max-height: 100%;*/
-  /*text-align: center;*/
-  /*border: 10px solid #032436;*/
-}
 
 .content h3 {
   /*padding-bottom: 5%;*/
 }
 
 #user-location {
-  display:inline-block;
+ /* display:inline-block;
   max-height: 100%;
   width: 100%;
   text-align: center;
-  margin: auto;
-  /*background-color: purple;*/
+  margin: auto;*/
 }
 
 .create-activity {
-  /*display:inline-block;*/
-  max-height: 100%;
-  /*width: 100%;*/
-  text-align:center;
-  margin:auto;
-  /*border-style: solid;
-  border-color:#032436;
-  border-width: 1%;*/
+/*  max-height: 100%;
 
-  /*margin-left: 30%;*/
-  /*margin-right: 30%;*/
+  text-align:center;
+  margin:auto;*/
 }
 
 
 #map_container{
-  border-radius: 15px;
+/*  border-radius: 15px;
   display: inline-block;
   border: .3em solid #032436;
 
   max-height: 100%;
   max-width: 95%;
-  margin: auto;
+  margin: auto;*/
 }
 
 @media only screen and (max-device-width: 480px) {
   html {
-    background-color: white;
-    font-size:50px;
+   /* background-color: white;
+    font-size:50px;*/
   }
 
 }
 
-.new-activity-form-container {
-  /*color: #92C060;*/
-
-}
 
 #new-activity-form-container{
 
 }
 
 input[type=submit] {
-  margin-bottom:2%;
+/*  margin-bottom:2%;
   background-color: #032436;
   border-radius: 5px;
   border:0 none;
   width: 125px;
   height: 20px;
-  color: white;
+  color: white;*/
 }
 
 input[type=submit]:hover {
-box-shadow: 0px 2px 5px #888888;
-}
-
-.create-activity {
-  /*display:inline-block;*/
-  /*max-height: 100%;
-  width: 100%;
-  text-align:center;
-  margin:auto;*/
-  /*border-style: solid;
-  border-color:#032436;
-  border-width: 1%;*/
-
-  /*margin-left: 30%;*/
-  /*margin-right: 30%;*/
-}
+/*box-shadow: 0px 2px 5px #888888;
+*/}
 
 
 .logo img{
-  float: left;
-  /*z-index: -1;*/
+ /* float: left;
   max-height:100%;
   width:25%;
   display: block;
-  margin-left: 0%;
+  margin-left: 0%;*/
 }
-.alien img{
+
+/*.alien img{
   max-height:100%;
   width:20%;
   display: block;
-  margin-left: 73%;
+  margin-left: 73%;*/
 
 }
 
 .white-cloud img{
-  position: relative;
+/*  position: relative;
   max-height:100%;
-  width:30%;
+  width:30%;*/
 
-  opacity: 0.7;
-  /*-webkit-animation: moveclouds 17s linear infinite;
-  -moz-animation: moveclouds 17s linear infinite;
-  -o-animation: moveclouds 17s linear infinite;*/
+
 }
 
 .login-link a {
-  color: #032436;
-  z-index: 1;
+ /* color: #032436;
+  z-index: 1;*/
 }
 
 a:hover {
-    /*color: #032436;*/
+
 }
 
 a:link {
 
-  text-decoration: none;
-  color: #032436;
-
-  /*text-decoration: none;*/
-  /*color: #032436;*/
+/*  text-decoration: none;
+  color: #032436;*/
 
 }
 
@@ -215,179 +157,7 @@ a:link {
 
 
 #clouds{
-  /*background-size: contain;*/
-/*  position:fixed;
-  margin:0;
-  top:0;
-  left:0;
-  width: 100%;
-  height: 100%;
+  /*background: #c9dbe9;*/
 
-  padding-top:1%;
-  padding-left: 1%;*/
-  background: #c9dbe9;
-  /*background: -webkit-linear-gradient(top, #c9dbe9 0%, #fff 100%);*/
-  /*background: -linear-gradient(top, #c9dbe9 0%, #fff 100%);*/
-  /*background: -moz-linear-gradient(top, #c9dbe9 0%, #fff 100%);*/
 }
 
-/*Time to finalise the cloud shape*/
-/*.cloud {
-  width: 400px; height: 144px;
-  background: #fff;*/
-
-  /*border-radius: 200px;*/
-  /*-moz-border-radius: 200px;*/
-  /*-webkit-border-radius: 200px;*/
-
-  /*position: relative;*/
-
-/*}*/
-
-/*.cloud:before, .cloud:after {
-  z-index: -1;
-  content: '';
-  position: absolute;
-  background: #fff;
-  width: 140px; height: 250px;
-  position: absolute; top: -55px; left: 60px;
-
-  border-radius: 100px;
-  /*-moz-border-radius: 100px;*/
-  /*-webkit-border-radius: 100px;*/
-
-  /*-webkit-transform: rotate(30deg);*/
-  /*transform: rotate(30deg);*/
-  /*-moz-transform: rotate(30deg);*/
-/*}*/
-
-
-/*.cloud:after {
-  width: 140px; height: 250px;
-  top: -65px; left: auto; right: 65px;
-}*/
-
-/*Time to animate*/
-.x1 {
-  /*-webkit-animation: moveclouds 15s linear infinite;
-  -moz-animation: moveclouds 15s linear infinite;
-  -o-animation: moveclouds 15s linear infinite;*/
-
-  /*left: 200px;*/
-
-
-  /*width:100%;
-  max-height: 100%;
-  -webkit-transform: scale(0.75);
-  -moz-transform: scale(0.75);
-  transform: scale(0.75);*/
-  opacity: 0.7; /*opacity proportional to the size*/
-
-  /*Speed will also be proportional to the size and opacity*/
-  /*More the speed. Less the time in 's' = seconds*/
-  /*-webkit-animation: moveclouds 20s linear infinite;
-  -moz-animation: moveclouds 20s linear infinite;
-  -o-animation: moveclouds 20s linear infinite;*/
-}
-
-/*variable speed, opacity, and position of clouds for realistic effect*/
-/*.x2 {*/
-  /*left: 200px; top:-550px;*/
- /* margin-bottom:16%;
-  -webkit-transform: scale(0.75);
-  -moz-transform: scale(0.75);
-  transform: scale(0.75);
-  opacity: 0.7; /*opacity proportional to the size*/
-
-  /*Speed will also be proportional to the size and opacity
-  More the speed. Less the time in 's' = seconds
-  -webkit-animation: moveclouds 25s linear infinite;
-  -moz-animation: moveclouds 25s linear infinite;
-  -o-animation: moveclouds 25s linear infinite;*/
-/*}*/
-
-/*.x3 {*/
-  /*left: -250px; top: -600px;*/
-  /*margin-top:0%;
-  -webkit-transform: scale(0.8);
-  -moz-transform: scale(0.8);
-  transform: scale(0.8);
-  opacity: 0.7;
-
-  -webkit-animation: moveclouds 22s linear infinite;
-  -moz-animation: moveclouds 22s linear infinite;
-  -o-animation: moveclouds 22s linear infinite;*/
-/*}*/
-
-/*.x4 {
-  /*left: 470px; top: -700px;*/
-  /*margin-top:0%;
-  -webkit-transform: scale(0.75);
-  -moz-transform: scale(0.75);
-  transform: scale(0.75);
-  opacity: 0.75;
-
-  -webkit-animation: moveclouds 21s linear infinite;
-  -moz-animation: moveclouds 21s linear infinite;
-  -o-animation: moveclouds 21s linear infinite;*/
-/*}*/
-
-/*.x5 {*/
-  /*left: -150px; top: -650px;*/
- /* margin-top:-6%;
-  -webkit-transform: scale(0.8);
-  -moz-transform: scale(0.8);
-  transform: scale(0.8);
-  opacity: 0.7; opacity
-
-
-  -webkit-animation: moveclouds 20s linear infinite;
-  -moz-animation: moveclouds 20s linear infinite;
-  -o-animation: moveclouds 20s linear infinite;*/
-/*}*/
-
-
-/*.x2 {
-  /*left: 200px; top:-550px;*/
-  /*margin-bottom:16%;*/
-  /*-webkit-transform: scale(0.75);
-  -moz-transform: scale(0.75);
-  transform: scale(0.75);
-  /*opacity: 0.7; opacity proportional to the size*/
-
-  /*Speed will also be proportional to the size and opacity
-  More the speed. Less the time in 's' = seconds
-  -webkit-animation: moveclouds 25s linear infinite;
-  -moz-animation: moveclouds 25s linear infinite;
-  -o-animation: moveclouds 25s linear infinite;
-}
-*/
-
-.x6 {
-  /*left: -150px; top: -650px;*/
-  /*z-index: -1;
-  width:100%;
-  max-height: 100%;
-  /*margin-left:50%;*/
-  /*-webkit-transform: scale(0.8);
-  -moz-transform: scale(0.8);
-  transform: scale(0.8);*/*/
-  opacity: 0.7; /*opacity proportional to the size*/
-
-  /*-webkit-animation: moveclouds 20s linear infinite;
-  -moz-animation: moveclouds 20s linear infinite;
-  -o-animation: moveclouds 20s linear infinite;*/
-}
-
-/*@-webkit-keyframes moveclouds {
-  0% {margin-left: 100%;}
-  100% {margin-left: -100%;}
-}
-@-moz-keyframes moveclouds {
-  0% {margin-left: 100%;}
-  100% {margin-left: -100%;}
-}
-@-o-keyframes moveclouds {
-  0% {margin-left: 100%;}
-  100% {margin-left: -100%;}
-}

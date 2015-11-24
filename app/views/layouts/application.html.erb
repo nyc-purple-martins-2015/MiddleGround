@@ -16,21 +16,31 @@
 </head>
 
 <body>
-  <div class="navbar">
-    <%= link_to 'Home', root_path  %> |
-    <% if logged_in? %>
-    <a href="/users/<%=current_user.id%>"><%=current_user.username%></a> |
-    <span class="logout-link">
-      <%= link_to "Logout", logout_path %>
-    </span>
-    <% else %>
-    <span class="login-link">
-      <%= link_to "Login", login_path %>
-    </span>
-    <div>
+  <div class="top-bar">
+    <div class="top-bar-left">
+      <ul class="dropdown-menu" data-dropdown-menu>
+        <li class="menu-text">
+          <%= link_to 'Home', root_path  %>
+        </li>
+      </ul>
+    </div>
+    <div class="top-bar-right">
+      <ul class="menu">
+      <% if logged_in? %>
+        <li><a href="/users/<%=current_user.id%>"><%=current_user.username%></a></li>
+        <li><span class="logout-link">
+          <%= link_to "Logout", logout_path %>
+        </span></li>
+      <% else %>
+        <li><span class="login-link">
+          <%= link_to "Login", login_path %>
+        </span></li>
       <% end %>
+    </ul>
+    </div>
+  </div>
 
-      <%= yield %>
+  <%= yield %>
 
 </body>
 </html>
