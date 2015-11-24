@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   has_many :friend_activities, class_name: 'Activity', foreign_key: :friend_id
   has_many :addresses
   has_many :votes
+  after_create :send_welcome_email
 
   def friends
     self.accepted_friends.where('friendships.pending = ?', 0) + self.requested_friends.where('friendships.pending = ?', 0)
@@ -22,6 +23,12 @@ class User < ActiveRecord::Base
   def pending_friendships
     self.accepted_friendships.where(pending: 1)
   end
+
+  def send_welcome_email
+    puts "Sending welcome email"
+    UserMailer.welcome_email(self).deliver_now
+  end
+
 end
 
 

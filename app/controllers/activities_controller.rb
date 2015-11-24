@@ -9,6 +9,7 @@ class ActivitiesController < ApplicationController
   end
 
   def create
+    @friend= User.find(params[:friend].to_i)
     destination = business(Yelp.client.search_by_coordinates(midpoint_location, search_parameters))
     coords = destination.location.coordinate
     address = destination.location.display_address.join(", ")
