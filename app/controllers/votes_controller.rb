@@ -4,7 +4,7 @@ class VotesController < ApplicationController
     if vote.save
       redirect_to user_path(current_user)
     else
-      status 400
+      status 422
     end
   end
 

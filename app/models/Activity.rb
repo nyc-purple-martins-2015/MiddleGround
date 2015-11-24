@@ -5,11 +5,11 @@ class Activity < ActiveRecord::Base
   belongs_to :friend, class_name: 'User'
   has_many :votes
 
-  def self.filter_categories(category)
-    category.map {|category_filter| [category_filter["title"], category_filter["alias"]]}
+  def self.parse_businesses(possible_businesses)
+    possible_businesses.map {|business| [business["title"], business["alias"]]}
   end
 
-  def rated_by_user(user)
+  def not_yet_rated(user)
       self.votes.where(user_id: user.id).empty?
   end
 
