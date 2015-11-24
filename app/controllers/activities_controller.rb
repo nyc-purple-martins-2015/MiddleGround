@@ -1,7 +1,11 @@
 class ActivitiesController < ApplicationController
   def new
-    @users = (current_user.friends).map{|user| [user.username, user.id, {:'data-lat' => user.lat, :'data-long' => user.long, :'data-id' => user.id, class: "user-#{user.id}"}]}
-    @category_filter = Activity.parse_businesses(categories)
+    if logged_in?
+      @users = (current_user.friends).map{|user| [user.username, user.id, {:'data-lat' => user.lat, :'data-long' => user.long, :'data-id' => user.id, class: "user-#{user.id}"}]}
+      @category_filter = Activity.parse_businesses(categories)
+    else
+      redirect_to login_path
+    end
   end
 
   def create
