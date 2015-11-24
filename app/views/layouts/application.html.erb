@@ -1,38 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCo3bKaVBu8hjiT6-AwiedIaDOMq7mdDig&libraries=geometry">
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCo3bKaVBu8hjiT6-AwiedIaDOMq7mdDig&libraries=geometry">
   </script>
 
-    <title><%= content_for?(:title) ? yield(:title) : "MiddleGround" %></title>
+  <title><%= content_for?(:title) ? yield(:title) : "MiddleGround" %></title>
 
-    <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "vendor/modernizr" %>
-    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
-    <%= csrf_meta_tags %>
-  </head>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "vendor/modernizr" %>
+  <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
 
-  <body>
-    <div class="navbar">
-      <%= link_to 'Home', root_path  %> |
-      <% if logged_in? %>
+<body>
+  <div class="navbar">
+    <%= link_to 'Home', root_path  %> |
+    <% if logged_in? %>
     <a href="/users/<%=current_user.id%>"><%=current_user.username%></a> |
-      <span class="logout-link">
-    <%= link_to "Logout", logout_path %>
+    <span class="logout-link">
+      <%= link_to "Logout", logout_path %>
     </span>
     <% else %>
     <span class="login-link">
-    <%= link_to "Login", login_path %>
+      <%= link_to "Login", login_path %>
     </span>
     <div>
-    <% end %>
+      <% end %>
 
-    <%= yield %>
+      <%= yield %>
 
-  </body>
+</body>
 </html>
 
 

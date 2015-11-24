@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   get '/edit' => 'users#edit'
 
   patch '/users/:id' => 'users#update'
+  patch 'friendships/:id' => 'friendships#accept'
+  delete 'friendships/:id' => 'friendships#reject'
 
 
 resources :friendships, only: [:create, :update, :destroy]

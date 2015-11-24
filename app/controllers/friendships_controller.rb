@@ -8,13 +8,13 @@ class FriendshipsController < ApplicationController
     end
   end
 
-  def update
+  def accept
     friendship = Friendship.find(params[:id])
     friendship.update_attributes(pending: 0)
     redirect_to root_path
   end
 
-  def destroy
+  def reject
     friendship = Friendship.find(params[:id])
     friendship.destroy
     redirect_to root_path
