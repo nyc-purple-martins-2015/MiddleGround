@@ -2,11 +2,11 @@ function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition);
     } else {
-       $("#geoLocation").append("Geolocation is not supported by this browser.");
+       $("#getGeolocation").replaceWith("Geolocation is not supported by this browser.");
     }
 }
 function showPosition(position) {
-    $("#geoLocation").append("Latitude: " + position.coords.latitude +
+    $("#getGeolocation").replaceWith("Latitude: " + position.coords.latitude +
     "<br>Longitude: " + position.coords.longitude);
 }
 $(document).on("click", "#getGeolocation", function(){
