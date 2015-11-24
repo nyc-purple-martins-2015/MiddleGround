@@ -1,23 +1,18 @@
 
-<div id="clouds">
-  <span class="logo">
-    <%= image_tag "big_logo.png" %>
-  </span>
+<div class="row">
+  <div class="large-6 small-12 large-centered small-centered columns">
+      <p><%= link_to image_tag("park.jpg"), new_activity_path({:'data-type' => 'active'})%></p>
+  </div>
+</div>
 
-  <span class="white-cloud">
-    <%= link_to image_tag("park.jpg"), new_activity_path({:'data-type' => 'active'})%>
-  </span>
+<div id="row">
+  <div class="large-6 small-12 large-centered small-centered columns">
+      <p><%= link_to image_tag("new_logo.png", class:"center"), new_activity_path %></p>
+  </div>
+</div>
 
-  <span class="white-cloud">
-    <%= link_to image_tag("restaurant.jpg"), new_activity_path({:'data-type' => 'restaurants'}) %>
-  </span>
-
-  <span class="white-cloud">
-      <%= link_to image_tag("see_something.jpg"), new_activity_path({:'data-type' => 'arts'}) %>
-  </span>
-
-  <span class="white-cloud">
-    <%= link_to image_tag("DrinkSomethingCloud.png"), new_activity_path({:'data-type' => 'bars'}) %>
-  </span>
-
+<div class="row">
+  <div class="large-6 small-12 large-centered small-centered columns">
+      <p><%= link_to image_tag("see_something.jpg"), new_activity_path({:'data-type' => 'arts'}) %></p>
+  </div>
 </div>
