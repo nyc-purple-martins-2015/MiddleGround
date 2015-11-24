@@ -35,8 +35,8 @@ $(document).ready(function(){
   }
   $("#new-activity-form-container").on('submit', function(event){
     event.preventDefault();
-    var friendLat = $(this).find('#user').children().attr('data-lat');
-    var friendLong = $(this).find('#user').children().attr('data-long');
+    var friendLat = $(this).find('select#user').children().attr('data-lat');
+    var friendLong = $(this).find('select#user').children().attr('data-long');
     var friendId = $(this).find("select#user").val();
     var latitude = lat;
     var longitude = lng;

@@ -8,7 +8,10 @@
     <option value="TRANSIT">Transit</option>
   </select>
 </div>
-
-
 <div id="right-panel"></div>
+<div id="origin">
+<div id="destination">
+
 <div id="map-image", style="width: 100%; height: 500px;"></div>
+<div class="origin" data-origin-lat="<%=@origin[:lat]%>" data-origin-lng="<%=@origin[:lng]%>"></div>
+<div class="destination" data-destination-lat="<%=@destination[:lat]%>" data-destination-lng="<%=@destination[:lng]%>"></div>

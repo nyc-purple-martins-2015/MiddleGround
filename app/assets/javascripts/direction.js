@@ -5,8 +5,10 @@ var DirectionMap =  function(position,domMap){
 
 function calculateAndDisplayRoute(directionsService, directionsDisplay) {
   var selectedMode = document.getElementById('mode').value;
-  var end = new google.maps.LatLng({lat: 40.7127, lng: -74.005});
-  var start = new google.maps.LatLng({lat: 40.7117, lng: -74.005});
+  var originCoords = $(".origin").data();
+  var destCoords = $(".destination").data();
+  var end = new google.maps.LatLng({lat: destCoords.destinationLat, lng: destCoords.destinationLng});
+  var start = new google.maps.LatLng({lat: originCoords.originLat, lng: originCoords.originLng});
   directionsService.route({
     origin: start,
     destination: end,

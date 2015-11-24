@@ -22,8 +22,8 @@ class ActivitiesController < ApplicationController
   end
 
   def direction
-    byebug
-    render :direction
+    @origin = { lat: params["data-origin-lat"], lng: params["data-origin-long"] }
+    @destination = { lat: params["data-destination-lat"], lng: params["data-destination-long"] }
   end
 
   private
