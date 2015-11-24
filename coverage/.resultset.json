@@ -1,14 +1,14 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/amyliao/Desktop/middleground/config/environment.rb": [
+      "/Users/angelitagraves/Desktop/DevBootCamp/perps/dbc-final-project/MiddleGround/config/environment.rb": [
         null,
         1,
         null,
         null,
         1
       ],
-      "/Users/amyliao/Desktop/middleground/config/application.rb": [
+      "/Users/angelitagraves/Desktop/DevBootCamp/perps/dbc-final-project/MiddleGround/config/application.rb": [
         1,
         null,
         1,
@@ -40,17 +40,21 @@
         null,
         null,
         null,
+        null,
+        null,
+        null,
+        1,
         null,
         1,
         null,
         null
       ],
-      "/Users/amyliao/Desktop/middleground/config/boot.rb": [
+      "/Users/angelitagraves/Desktop/DevBootCamp/perps/dbc-final-project/MiddleGround/config/boot.rb": [
         1,
         null,
         1
       ],
-      "/Users/amyliao/Desktop/middleground/config/environments/test.rb": [
+      "/Users/angelitagraves/Desktop/DevBootCamp/perps/dbc-final-project/MiddleGround/config/environments/test.rb": [
         1,
         null,
         null,
@@ -94,7 +98,7 @@
         null,
         null
       ],
-      "/Users/amyliao/Desktop/middleground/config/initializers/assets.rb": [
+      "/Users/angelitagraves/Desktop/DevBootCamp/perps/dbc-final-project/MiddleGround/config/initializers/assets.rb": [
         null,
         null,
         null,
@@ -107,7 +111,7 @@
         null,
         null
       ],
-      "/Users/amyliao/Desktop/middleground/config/initializers/auth0.rb": [
+      "/Users/angelitagraves/Desktop/DevBootCamp/perps/dbc-final-project/MiddleGround/config/initializers/auth0.rb": [
         1,
         1,
         null,
@@ -118,7 +122,7 @@
         null,
         null
       ],
-      "/Users/amyliao/Desktop/middleground/config/initializers/backtrace_silencers.rb": [
+      "/Users/angelitagraves/Desktop/DevBootCamp/perps/dbc-final-project/MiddleGround/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -127,18 +131,18 @@
         null,
         null
       ],
-      "/Users/amyliao/Desktop/middleground/config/initializers/cookies_serializer.rb": [
+      "/Users/angelitagraves/Desktop/DevBootCamp/perps/dbc-final-project/MiddleGround/config/initializers/cookies_serializer.rb": [
         null,
         null,
         1
       ],
-      "/Users/amyliao/Desktop/middleground/config/initializers/filter_parameter_logging.rb": [
+      "/Users/angelitagraves/Desktop/DevBootCamp/perps/dbc-final-project/MiddleGround/config/initializers/filter_parameter_logging.rb": [
         null,
         null,
         null,
         1
       ],
-      "/Users/amyliao/Desktop/middleground/config/initializers/inflections.rb": [
+      "/Users/angelitagraves/Desktop/DevBootCamp/perps/dbc-final-project/MiddleGround/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -156,18 +160,18 @@
         null,
         null
       ],
-      "/Users/amyliao/Desktop/middleground/config/initializers/mime_types.rb": [
+      "/Users/angelitagraves/Desktop/DevBootCamp/perps/dbc-final-project/MiddleGround/config/initializers/mime_types.rb": [
         null,
         null,
         null,
         null
       ],
-      "/Users/amyliao/Desktop/middleground/config/initializers/session_store.rb": [
+      "/Users/angelitagraves/Desktop/DevBootCamp/perps/dbc-final-project/MiddleGround/config/initializers/session_store.rb": [
         null,
         null,
         1
       ],
-      "/Users/amyliao/Desktop/middleground/config/initializers/wrap_parameters.rb": [
+      "/Users/angelitagraves/Desktop/DevBootCamp/perps/dbc-final-project/MiddleGround/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -183,7 +187,7 @@
         null,
         null
       ],
-      "/Users/amyliao/Desktop/middleground/config/initializers/yelp.rb": [
+      "/Users/angelitagraves/Desktop/DevBootCamp/perps/dbc-final-project/MiddleGround/config/initializers/yelp.rb": [
         1,
         1,
         1,
@@ -191,10 +195,22 @@
         1,
         null
       ],
-      "/Users/amyliao/Desktop/middleground/spec/factories.rb": [
+      "/Users/angelitagraves/Desktop/DevBootCamp/perps/dbc-final-project/MiddleGround/spec/factories.rb": [
 
       ],
-      "/Users/amyliao/Desktop/middleground/config/routes.rb": [
+      "/Users/angelitagraves/Desktop/DevBootCamp/perps/dbc-final-project/MiddleGround/config/routes.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
         1,
         1,
         1,
@@ -202,38 +218,37 @@
         1,
         1,
         1,
+        null,
+        null,
         1,
         1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
         1,
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
         null,
         null,
         null,
@@ -263,58 +278,45 @@
         null,
         null
       ],
-      "/Users/amyliao/Desktop/middleground/app/helpers/application_helper.rb": [
+      "/Users/angelitagraves/Desktop/DevBootCamp/perps/dbc-final-project/MiddleGround/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/amyliao/Desktop/middleground/app/helpers/auth0_helper.rb": [
-        1,
-        null
-      ],
-      "/Users/amyliao/Desktop/middleground/app/controllers/auth0_controller.rb": [
+      "/Users/angelitagraves/Desktop/DevBootCamp/perps/dbc-final-project/MiddleGround/app/controllers/auth0_controller.rb": [
         1,
         1,
-        null,
-        1,
-        null,
-        null,
-        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
         null,
         null,
         1,
-        null,
-        null,
-        1,
-        null,
-        1,
+        0,
         null,
         null
       ],
-      "/Users/amyliao/Desktop/middleground/app/controllers/application_controller.rb": [
+      "/Users/angelitagraves/Desktop/DevBootCamp/perps/dbc-final-project/MiddleGround/app/controllers/application_controller.rb": [
         1,
         null,
         null,
         1,
-        null
-      ],
-      "/Users/amyliao/Desktop/middleground/spec/helpers/auth0_helper_spec.rb": [
+        null,
         1,
         null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
+        1,
+        0,
         null,
         null,
         1,
-        1,
+        0,
+        null,
         null
       ]
     },
-    "timestamp": 1448057963
+    "timestamp": 1448378554
   }
 }
