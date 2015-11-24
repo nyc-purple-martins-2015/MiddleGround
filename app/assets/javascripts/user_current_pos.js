@@ -35,8 +35,8 @@ $(document).ready(function(){
   }
   $("#new-activity-form-container").on('submit', function(event){
     event.preventDefault();
-    var friendLat = $(this).find('#user').children().attr('data-lat');
-    var friendLong = $(this).find('#user').children().attr('data-long');
+    var friendLat = $(this).find('select#user').children().attr('data-lat');
+    var friendLong = $(this).find('select#user').children().attr('data-long');
     var friendId = $(this).find("select#user").val();
     var latitude = lat;
     var longitude = lng;
@@ -57,12 +57,15 @@ $(document).ready(function(){
       datatype: 'json'
     });
     newActivityRequest.done(function(newActivityHTML){
-      $(".page-container").replaceWith(newActivityHTML);
+      $(".page-container").html(newActivityHTML);
     });
     newActivityRequest.fail(function(response){
       $(".error-message").empty();
       $(".error-message").html("I'm sorry, there were no activities that match your criteria. Please try again");
     });
-    }
-  );
+    });
+  // $(".page-container").on('click', 'a.destination', function(event){
+  //   event.preventDefault();
+  //   debugger
+  // })
 });

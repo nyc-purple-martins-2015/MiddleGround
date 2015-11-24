@@ -11,7 +11,7 @@
       </div>
       <div class="map-directions-container">
           <!-- You are here, ***friend*** is there, ***activity*** is here -->
-          <%= link_to 'Get Directions', directions_path, {:'data-destination' => @activity.location, :class => "destination", :'data-origin-lat' => current_user.lat, :'data-origin-long' => current_user.long}%>
+          <%= link_to 'Get Directions', directions_path({:'data-destination-lat' => @activity.lat, :'data-destination-long' => @activity.long,  :'data-origin-lat' => current_user.lat, :'data-origin-long' => current_user.long}), :class => "destination"%>
       </div>
     </div>
   </div>

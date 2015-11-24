@@ -5,8 +5,10 @@ var DirectionMap =  function(position,domMap){
 
 function calculateAndDisplayRoute(directionsService, directionsDisplay) {
   var selectedMode = document.getElementById('mode').value;
-  var end = new google.maps.LatLng({lat: 40.7127, lng: -74.005});
-  var start = new google.maps.LatLng({lat: 40.7117, lng: -74.005});
+  var originCoords = $(".origin").data();
+  var destCoords = $(".destination").data();
+  var end = new google.maps.LatLng({lat: destCoords.destinationLat, lng: destCoords.destinationLng});
+  var start = new google.maps.LatLng({lat: originCoords.originLat, lng: originCoords.originLng});
   directionsService.route({
     origin: start,
     destination: end,
@@ -23,9 +25,10 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
 document.addEventListener('DOMContentLoaded', function(){
   $("#mode").change(function(event){
     var domMap = $('map-image');
+    var coords = $(".origin").data();
     var directionsDisplay = new google.maps.DirectionsRenderer();
     var directionsService = new google.maps.DirectionsService();
-    var map = new DirectionMap(new google.maps.LatLng({lat: 40.7117, lng: -74.005}), domMap);
+    var map = new DirectionMap(new google.maps.LatLng({lat: coords.originLat, lng: coords.originLng}), domMap);
     var direction = $("#right-panel");
     direction.html("");
     directionsDisplay.setPanel(direction[0]);
