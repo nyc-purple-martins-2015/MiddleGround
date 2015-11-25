@@ -32,6 +32,17 @@ html body {
   text-align:center;
 }
 
+#nav-buttons {
+  background-color:#56ABB2;
+  color:white;
+}
+
+#activity-button{
+  padding: 10px;
+  border-radius: 5px;
+  /*width: 100%;*/
+}
+
 .button {
   background-color: #FEBD5F;
 }
