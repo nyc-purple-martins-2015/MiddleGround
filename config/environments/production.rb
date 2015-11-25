@@ -79,15 +79,15 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { :host => 'middle-ground.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
   config.action_mailer.default :charset => "utf-8"
   config.action_mailer.smtp_settings = {
   address: "smtp.gmail.com",
   port: 587,
   authentication: "plain",
   enable_starttls_auto: true,
-  user_name: ENV['gmail_username'],
-  password: ENV['gmail_password'],
+  user_name: ENV['GMAIL_SMTP_USER'],
+  password: ENV['GMAIL_SMTP_PASSWORD'],
   enable_starttls_auto: true
   }
 end
