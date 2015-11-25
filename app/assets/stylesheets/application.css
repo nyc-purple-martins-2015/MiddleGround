@@ -11,13 +11,18 @@ html {
 }
 
  html body {
-  background-color: #92BF20;
+  color:white;
+  background-color: #88B540;
 }
 
+.button {
+  background-color: #FEBD5F;
+}
 .center {
-  max-height: 100%;
-  width:65%;
+  max-height: 25%;
+  width: 100%;
   margin: 0 auto;
+/*  padding-left: 25%;*/
 }
 .rate-form {
   display: none;
