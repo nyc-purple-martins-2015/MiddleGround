@@ -7,9 +7,6 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     @user.update_attributes(user_params)
-    p "*" * 25
-    p @user
-    p "*" * 25
     redirect_to root_path
   end
 
