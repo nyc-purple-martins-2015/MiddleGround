@@ -14,7 +14,6 @@ class ActivitiesController < ApplicationController
     coords = destination.location.coordinate
     address = destination.location.display_address.join(", ")
     @activity = Activity.new(location: address, title: destination.name, creator_id: current_user.id, friend_id: params[:friend].to_i, lat: coords.latitude, long: coords.longitude)
-    p @activity
     if @activity.save!
       @friend = User.find(@activity.friend_id)
       render :show, layout:false
