@@ -2,18 +2,40 @@
   <div class="content">
     <div class="activity-information-container">
       <div class="details-container">
-        <p>You are going to <%= @activity.title %> with <%=@friend.username%></p>
+        <br><br>
+        <div class="row">
+          <div class="large-6 small-12 large-centered small-centered columns">
+          <p>You are going to <b><%= @activity.title %></b> with <%=@friend.username%></p>
 
-        <p><%=@activity.location%></p>
+          <p><strong><%=@activity.location%></strong></p>
+        </div>
       </div>
       <div class="send-request-form">
-        <!-- Send this request to ***friend***? Veto option -->
       </div>
       <div class="map-directions-container">
-        <%= link_to 'Get Directions', directions_path({:'data-destination-lat' => @activity.lat, :'data-destination-long' => @activity.long,  :'data-origin-lat' => current_user.lat, :'data-origin-long' => current_user.long}), :class => "destination"%>
+        <div class="row">
+          <div class="large-6 small-12 large-centered small-centered columns">
+            <%= button_to 'Get Directions', directions_path({:'data-destination-lat' => @activity.lat, :'data-destination-long' => @activity.long,  :'data-origin-lat' => current_user.lat, :'data-origin-long' => current_user.long}), :class => "destination"%>
+          </div>
+          <br>
+        </div>
       </div>
     </div>
   </div>
 </div>
-<div id="user-location" data-friend-lat="<%=@friend.lat%>" data-friend-long="<%=@friend.long%>">
-<article class="destination" data-destination-lat= '<%=@activity.lat%>', data-destination-long= '<%=@activity.long%>'></article></div>
+<div class="row">
+  <div class="large-6 small-12 large-centered small-centered columns">
+    <div id="user-location" data-friend-lat="<%=@friend.lat%>" data-friend-long="<%=@friend.long%>">
+      <article class="destination" data-destination-lat= '<%=@activity.lat%>', data-destination-long= '<%=@activity.long%>'></article>
+    </div>
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="large-6 small-12 large-centered small-centered columns">
+    <div class="yelp-logo">
+      <span><%= image_tag "yelp-logo-large.png" %></span>
+    </div>
+  </div>
+</div>
+<br><br>
