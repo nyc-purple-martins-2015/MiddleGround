@@ -9,18 +9,13 @@
       </div>
       <div class="row">
         <div class="large-6 small-12 large-centered small-centered columns">
-          <h3> What's the Middle Ground </h3>
+          <h3> What's the Middle Ground? </h3>
         </div>
       </div>
       <br>
       <div class="row">
         <div class="large-6 small-12 large-centered small-centered columns">
           <div id="new-activity-form-container">
-            <%= form_tag ("/activities") %>
-            <p><%= label_tag 'Your Location:' %></p>
-            <p><%= text_field_tag 'user_location' %></p>
-            <p></p>
-
             <p><%= label_tag "Who are you meeting?" %></p>
             <p><%= select_tag(:user, options_for_select(@users)) %></p>
             <p><%= label_tag "Activity:" %></p>
