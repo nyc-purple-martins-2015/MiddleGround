@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'middleground12345@gmail.com'
+  default from: 'Middle-Ground.herokuapp.com'
   layout 'mailer'
 end
