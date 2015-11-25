@@ -3,6 +3,7 @@ class Auth0Controller < ApplicationController
     auth_hash = request.env['omniauth.auth']
     user = User.find_or_create_by(uid: auth_hash['uid'])
     user.username = auth_hash['info']['name']
+    user.email = auth_hash['info']['email']
     user.avatar = auth_hash['info']['image']
     user.save!
     session[:user_id] = user.id

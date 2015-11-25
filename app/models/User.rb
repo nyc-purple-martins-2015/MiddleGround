@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   has_many :friend_activities, class_name: 'Activity', foreign_key: :friend_id
   has_many :addresses
   has_many :votes
+  after_create :send_welcome_email
 
   def friends
     sql1 = self.accepted_friends.where('friendships.pending = ?', 0).to_sql
@@ -31,6 +32,10 @@ class User < ActiveRecord::Base
 
   def potential_friends
     User.all.select { |user| (!user.friends.include?(self) && user != @user) }.map { |user| [user.username, user.id]}
+  end
+
+  def send_welcome_email
+    UserMailer.welcome_email(self).deliver_now
   end
 end
 
