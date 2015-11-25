@@ -1,25 +1,32 @@
-<%= form_for @user do |f| %>
-<div class="location-form">
-  <%= f.hidden_field :lat , id: 'lat', value: '' %>
-  <%= f.hidden_field :long, id:'long', value: '' %>
+<div class="row">
+  <div id="form-text"class="large-4 small-8 large-centered small-centered columns">
+    <%= form_for @user do |f| %>
+    <div class="location-form">
+      <%= f.hidden_field :lat , id: 'lat', value: '' %>
+      <%= f.hidden_field :long, id:'long', value: '' %>
+    </div>
+    <div class="contact-info-form">
+      <br>
+      <p>Complete/Update your Profile!</p>
+      <div class="form_fields">
+        <%=f.label :username %>
+        <%=f.text_field :username %>
+        <%=f.label :phone_number %>
+        <%=f.text_field :phone_number %>
+        <%=f.label :email %>
+        <%=f.text_field :email %>
+      </div>
+    </div>
+      <div id="form-text"class="large-4 small-6 large-centered small-centered columns">
+        <%= f.submit "Update Profile!"%>
+      </div>
+      <% end %>
+      <br>
+  </div>
 </div>
-<div class="contact-info-form">
-  <div class="row">
-    <div class="large-12 small-12 large-center small-center columns">
-  <h4>Complete/Update your Profile!</h4>
-</div>
-</div>
-  <%=f.label :username %>
-  <%=f.text_field :username %>
-  <%=f.label :phone_number %>
-  <%=f.text_field :phone_number %>
-  <%=f.label :email %>
-  <%=f.text_field :email %>
-  <%= f.submit "Update Profile!"%>
-  <% end %>
-</div>
-</div>
-<div>
-  <button id="getGeolocation">See Your Current Position</button>
-  <div id="geoLocation"></div>
+<div class="row">
+  <div id="form-text"class="large-4 small-8 large-centered small-centered columns">
+      <button id="getGeolocation">See Your Current Position</button>
+      <div id="geoLocation"></div>
+    </div>
 </div>
