@@ -1,5 +1,4 @@
 class UserMailer < ApplicationMailer
-  default from: 'notifications@example.com'
 
   def welcome_email(target_user)
     @user = target_user
