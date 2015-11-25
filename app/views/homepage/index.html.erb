@@ -1,18 +1,44 @@
 
 <div class="row">
   <div class="large-6 small-12 large-centered small-centered columns">
-      <p><%= link_to image_tag("park.jpg"), new_activity_path({:'data-type' => 'active'})%></p>
+    <p>Welcome to MiddleGround! Our goal is to make finding places to meet with your friends as simple as possible. Choose a button below to start searching! </p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="large-3 small-3 columns">
+     <a href="activities/new?data-type=active" class="button tiny">Do Something</a>
+  </div>
+
+  <div class="large-3 small-3 columns">
+     <a href="activities/new?data-type=restaurants" class="button tiny">Eat Something </a>
+  </div>
+
+  <div class="large-3 small-3 columns">
+    <a href="activities/new?data-type=arts" class="button tiny">See Something</a>
+  </div>
+
+  <div class="large-3 small-3 columns">
+    <a href="activities/new?data-type=bars" class="button tiny"> Drink Something </a>
+  </div>
+
+</div>
+
+
+<div class="row">
+  <div class="large-6 small-12 large-centered small-centered columns">
+      <%= link_to image_tag("park.jpg"), new_activity_path({:'data-type' => 'active'})%>
   </div>
 </div>
 
 <div id="row">
   <div class="large-6 small-12 large-centered small-centered columns">
-      <p><%= link_to image_tag("new_logo.png", class:"center"), new_activity_path %></p>
+      <%= link_to image_tag("square_logo.png", class:"center"), new_activity_path %>
   </div>
 </div>
 
 <div class="row">
   <div class="large-6 small-12 large-centered small-centered columns">
-      <p><%= link_to image_tag("see_something.jpg"), new_activity_path({:'data-type' => 'arts'}) %></p>
+     <%= link_to image_tag("see_something.jpg"), new_activity_path({:'data-type' => 'arts'}) %>
   </div>
 </div>
