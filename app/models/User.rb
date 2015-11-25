@@ -39,6 +39,7 @@ class User < ActiveRecord::Base
     not_you = already_friends.select{|user| user != self }
     pending_requests = not_you.select{|user| !self.already_friended(user)}
     format_for_dropdown = pending_requests.map { |user| [user.username, user.id]}
+    format_for_dropdown
   end
 
   def send_welcome_email
