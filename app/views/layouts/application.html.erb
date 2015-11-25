@@ -18,7 +18,7 @@
 <body>
   <nav class="top-bar" data-topbar>
     <section class="top-bar-section">
-      <%= link_to image_tag("nav_favicon.png"), root_path %>
+      <span class="favicon"><%= link_to image_tag("nav_favicon.png"), root_path %></span>
       <% if logged_in? %>
         <a id="nav-buttons"class="button radius" href="/users/<%=current_user.id%>">Profile </a>
         <a id="nav-buttons"class="button radius"href="/logout">Logout</a>
