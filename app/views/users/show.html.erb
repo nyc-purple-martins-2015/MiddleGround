@@ -1,71 +1,87 @@
-<div class="user-profile-container">
-  <div class="user-details">
-    <div class="user-avatar"></div>
-  </div>
-  <div class="favorite-spots"></div>
-  <div class="recent-activities-container">
-    <h3>Recent MiddleGround Activities </h3>
-    <% @user.activities.last(5).each do |s| %>
-    <p><%=s.title%></p>
-    <% if s.not_yet_rated(@user) %>
-    <div class="ratings">
-
-      <button class="rating-button">Rate It</button>
-      <div class='rate-form'>
-        <%= form_for Vote.new do |f|%>
-        <%=f.hidden_field :value, :value => 1 %>
-        <%=f.hidden_field :activity_id, :value => s.id %>
-        <%= f.submit 'Loved It' %>
-        <%end%>
-        <%= form_for Vote.new do |f|%>
-        <%=f.hidden_field :value, :value => -1 %>
-        <%=f.hidden_field :activity_id, :value => s.id %>
-        <%= f.submit 'Hated It' %>
-        <%end%>
-
+<div class="row">
+  <div class="large-4 small-12 large-centered small-centered columns">
+    <div class="user-profile-container">
+      <div class="user-details">
+        <div class="user-avatar"></div>
       </div>
-      <%end%>
-    </div>
-    <%end%>
-  </div>
+      <div class="favorite-spots"></div>
+      <div class="recent-activities-container">
+        <br>
+        Recent MiddleGround Activities
+        <% @user.activities.last(5).each do |s| %>
+        <p><%=s.title%></p>
+        <% if s.not_yet_rated(@user) %>
+        <div class="ratings">
 
-  <div class="friends-list-container"></div>
-  <div class="edit-profile-container">
-    <!-- form for editing profile -->
-    <div class="add-address-form-container">
-      <!-- form to add address to profile -->
-    </div>
-    <div class="friend-form-container">
-    <% if flash[:notice] %>
-      <div class="notice"><%= flash[:notice] %></div>
-    <% end %>
-     <h3> Find Friends </h3>
-     <%= form_for Friendship.new do |f| %>
-     <%= f.select(:acceptor_id, options_for_select(@user.potential_friends))%>
-     <%= f.submit "Send Friend Request" %>
-     <%end%>
-   </div>
-
-   <div class="pending-friendships">
-    <% unless @user.pending_friendships.empty? %>
-    <h3> Pending Friend Requests </h3>
-    <% @user.pending_friendships.each do |p| %>
-    <p><%= p.requester.username %></p>
-    <%= form_for p, :method => :patch do |f|%>
-    <%= f.submit 'Accept Friend Request' %>
-    <%end%>
-    <%= form_for p, :method => :delete do |f|%>
-    <%= f.submit 'Reject Friend Request' %>
-    <%end%>
-    <% end %>
-    <%end%>
-  </div>
-
-  <div class="friends-container">
-    <h3> Your Friends </h3>
-    <% @user.friends.each do |friend| %>
-    <p><%= friend.username %></p>
-    <% end %>
   </div>
 </div>
+
+<div class="row">
+  <div class="large-4 small-12 large-centered small-centered columns">
+          <button class="rating-button">Rate It</button>
+          <div class='rate-form'>
+            <div class="form_fields">
+            <%= form_for Vote.new do |f|%>
+            <%=f.hidden_field :value, :value => 1 %>
+            <%=f.hidden_field :activity_id, :value => s.id %>
+            <%= f.submit 'Loved It' %>
+            <%end%>
+            <%= form_for Vote.new do |f|%>
+            <%=f.hidden_field :value, :value => -1 %>
+            <%=f.hidden_field :activity_id, :value => s.id %>
+            <%= f.submit 'Hated It' %>
+            <%end%>
+            </div>
+          </div>
+          <%end%>
+        </div>
+        <%end%>
+      </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="large-4 small-8 large-centered small-centered columns">
+    <br>
+      <div class="friends-list-container"></div>
+      <div class="edit-profile-container">
+        <!-- form for editing profile -->
+        <div class="add-address-form-container">
+          <!-- form to add address to profile -->
+        </div>
+        <div class="friend-form-container">
+        <% if flash[:notice] %>
+          <div class="notice"><%= flash[:notice] %></div>
+        <% end %>
+          Find Friends
+         <%= form_for Friendship.new do |f| %>
+         <%= f.select(:acceptor_id, options_for_select(@user.potential_friends))%>
+         <%= f.submit "Send Friend Request" %>
+         <%end%>
+       </div>
+
+       <div class="pending-friendships">
+        <% unless @user.pending_friendships.empty? %>
+        <h3> Pending Friend Requests </h3>
+        <% @user.pending_friendships.each do |p| %>
+        <p><%= p.requester.username %></p>
+        <%= form_for p, :method => :patch do |f|%>
+        <%= f.submit 'Accept Friend Request' %>
+        <%end%>
+        <%= form_for p, :method => :delete do |f|%>
+        <%= f.submit 'Reject Friend Request' %>
+        <%end%>
+        <% end %>
+        <%end%>
+      </div>
+
+      <div class="friends-container">
+         Your Friends
+        <% @user.friends.each do |friend| %>
+        <p><%= friend.username %></p>
+        <% end %>
+      </div>
+    </div>
+    </div>
+  </div>
 </div>

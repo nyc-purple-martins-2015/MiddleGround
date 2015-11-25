@@ -3,10 +3,19 @@
 html body {
   color:white;
   background-color: #88B540;
+  text-align: center;
+}
+
+.top-bar-section{
+  text-align: left;
 }
 
 .interests{
   text-align: center;
+}
+
+.recent-activities-container{
+  font-size:25px;
 }
 
 .new-activity-form-container{
