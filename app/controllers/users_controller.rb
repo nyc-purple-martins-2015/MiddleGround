@@ -11,7 +11,7 @@ class UsersController < ApplicationController
 
   def show
     if logged_in?
-      @user = User.find_by(id: current_user.id)
+      @user = User.includes(:requested_friends, :accepted_friends, :created_activities, :friend_activities, :requested_friendships, :accepted_friendships).find_by(id: current_user.id)
     else
       redirect_to login_path
     end
