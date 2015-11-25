@@ -15,7 +15,7 @@
       <div class="map-directions-container">
         <div class="row">
           <div class="large-6 small-12 large-centered small-centered columns">
-            <%= button_to 'Get Directions', directions_path({:'data-destination-lat' => @activity.lat, :'data-destination-long' => @activity.long,  :'data-origin-lat' => current_user.lat, :'data-origin-long' => current_user.long}), :class => "destination"%>
+            <%= link_to 'Get Directions', directions_path({:'data-destination-lat' => @activity.lat, :'data-destination-long' => @activity.long,  :'data-origin-lat' => current_user.lat, :'data-origin-long' => current_user.long}), :class => "destination"%>
           </div>
           <br>
         </div>
