@@ -37,8 +37,14 @@ html body {
   color:white;
 }
 
+#logo{
+  /*border: 10px solid black;*/
+  height:95%;
+  width: 100%;
+}
+
 #activity-button{
-  padding: 10px;
+  padding: 8px;
   border-radius: 5px;
   /*width: 100%;*/
 }
