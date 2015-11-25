@@ -10,9 +10,26 @@ html {
 
 }
 
- html body {
+html body {
   color:white;
   background-color: #88B540;
+}
+
+.new-activity-form-container{
+  color:white;
+}
+
+.map-container {
+  border-color: white;
+  border-width: 25px;
+  position: relative;
+  padding-bottom: 75%;
+  height: 0;
+  overflow: hidden;
+}
+
+.title-area {
+  text-align:center;
 }
 
 .button {

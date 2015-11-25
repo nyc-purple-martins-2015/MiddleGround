@@ -3,20 +3,22 @@
     <div class="create-activity">
       <br>
       <div class="row">
-        <div class="large-6 small-12 large-centered small-centered columns">
+        <div class="large-6 small-6 large-centered small-centered columns">
           <p class="error-message"></p>
         </div>
       </div>
       <div class="row">
-        <div class="large-6 small-12 large-centered small-centered columns">
-          <h3> What's the Middle Ground? </h3>
+        <!-- <div class="large-12 small-12 large-centered small-centered columns"> -->
+          <div class="title-area">What's the Middle Ground?</div>
         </div>
       </div>
       <br>
       <div class="row">
-        <div class="large-6 small-12 large-centered small-centered columns">
+
+        <div class="large-4 small-8 large-centered small-centered columns">
           <div id="new-activity-form-container">
               <%= form_tag ("/activities") %>
+
             <p><%= label_tag "Who are you meeting?" %></p>
             <p><%= select_tag(:user, options_for_select(@users)) %></p>
             <p><%= label_tag "Activity:" %></p>
@@ -25,25 +27,23 @@
             <div>
           </div>
           <br>
-        </div>
+
       </div>
     </div>
     <div class="row">
-      <div class="large-6 small-12 large-centered small-centered columns">
-        <section id="user-location">
-          <article>
-          </article>
-        </section>
-      </div>
+      <section class="large-6 small-8 large-centered small-centered columns" id="user-location">
+        <article class="map-container">
+        </article>
+      </section>
     </div>
     <br>
-    <div class="row">
-      <div class="large-6 small-12 large-centered small-centered columns">
+    <!-- <div class="row"> -->
+      <!-- <div class="large-6 small-12 large-centered small-centered columns"> -->
         <div class="yelp-logo">
           <span><%= image_tag "yelp-logo-large.png" %></span>
         </div>
-      </div>
-    </div>
+      <!-- </div> -->
+    <!-- </div> -->
     <br><br>
     </div>
   </div>
