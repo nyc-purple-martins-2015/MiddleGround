@@ -53,6 +53,7 @@
         <% if flash[:notice] %>
           <div class="notice"><%= flash[:notice] %></div>
         <% end %>
+        <br>
           Find Friends
          <%= form_for Friendship.new do |f| %>
          <%= f.select(:acceptor_id, options_for_select(@user.potential_friends))%>
@@ -62,7 +63,7 @@
 
        <div class="pending-friendships">
         <% unless @user.pending_friendships.empty? %>
-        <h3> Pending Friend Requests </h3>
+         Pending Friend Requests
         <% @user.pending_friendships.each do |p| %>
         <p><%= p.requester.username %></p>
         <%= form_for p, :method => :patch do |f|%>
@@ -76,6 +77,7 @@
       </div>
 
       <div class="friends-container">
+        <br>
          Your Friends
         <% @user.friends.each do |friend| %>
         <p><%= friend.username %></p>
