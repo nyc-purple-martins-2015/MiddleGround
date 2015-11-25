@@ -73,7 +73,6 @@ $(document).ready(function(){
         datatype: 'json'
       });
       newActivityRequest.done(function(newActivityHTML){
-        debugger
         $(".page-container").html(newActivityHTML);
         navigator.geolocation.getCurrentPosition(success);
       });
