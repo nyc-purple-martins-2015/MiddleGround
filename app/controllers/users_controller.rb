@@ -5,7 +5,8 @@ class UsersController < ApplicationController
   end
 
   def update
-    current_user.update_attributes(user_params)
+    @user = User.find(params[:id])
+    @user.update_attributes(user_params)
     redirect_to root_path
   end
 
