@@ -29,6 +29,7 @@ $(document).ready(function(){
 
       var marker = new google.maps.Marker({
         position: coords,
+        icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
         map: map,
         animation: google.maps.Animation.DROP,
         title:"You are here!"
@@ -46,7 +47,6 @@ $(document).ready(function(){
       var destLocation = new google.maps.LatLng({lat: parseFloat(destination.destinationLat), lng: parseFloat(destination.destinationLong)});
       var meeting = new google.maps.Marker({
         position: destLocation,
-        icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
         animation: google.maps.Animation.DROP,
         map: map,
         title: "Your desintation is here!"
