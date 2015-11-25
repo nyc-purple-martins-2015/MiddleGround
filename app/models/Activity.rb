@@ -15,7 +15,6 @@ class Activity < ActiveRecord::Base
   end
 
   def send_activity_email
-    byebug
     AcitvityMailer.activity_email(self).deliver_now
   end
 end

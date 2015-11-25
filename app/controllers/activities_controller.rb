@@ -9,7 +9,6 @@ class ActivitiesController < ApplicationController
   end
 
   def create
-    byebug
     destination = business(Yelp.client.search_by_coordinates(midpoint_location, search_parameters))
     coords = destination.location.coordinate
     address = destination.location.display_address.join(", ")
