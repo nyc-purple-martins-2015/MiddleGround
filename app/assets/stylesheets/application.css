@@ -32,6 +32,23 @@ html body {
   text-align:center;
 }
 
+#nav-buttons {
+  background-color:#56ABB2;
+  color:white;
+}
+
+#logo{
+  /*border: 10px solid black;*/
+  height:95%;
+  width: 100%;
+}
+
+#activity-button{
+  padding: 8px;
+  border-radius: 5px;
+  /*width: 100%;*/
+}
+
 .button {
   background-color: #FEBD5F;
 }
