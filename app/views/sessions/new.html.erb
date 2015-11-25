@@ -8,7 +8,7 @@
 
   lock.show({
       container: 'root'
-    , callbackURL: 'http://localhost:3000/auth/auth0/callback'
+    , callbackURL: (document.location.origin + '/auth/auth0/callback')
     , responseType: 'code'
     , authParams: {
       scope: 'openid profile'
