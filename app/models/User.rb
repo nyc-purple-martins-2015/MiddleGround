@@ -12,15 +12,25 @@ class User < ActiveRecord::Base
   has_many :votes
 
   def friends
-    self.accepted_friends.where('friendships.pending = ?', 0) + self.requested_friends.where('friendships.pending = ?', 0)
+    sql1 = self.accepted_friends.where('friendships.pending = ?', 0).to_sql
+    sql2 = self.requested_friends.where('friendships.pending = ?', 0).to_sql
+    sql = " (( #{sql1} ) union all ( #{sql2} ) ) as users"
+    User.from(sql)
   end
 
   def activities
-    self.created_activities + self.friend_activities
+    created = self.created_activities.to_sql
+    friend = self.friend_activities.to_sql
+    sql = " (( #{created} ) union all ( #{friend} ) ) as activities"
+    Activity.from(sql)
   end
 
   def pending_friendships
     self.accepted_friendships.where(pending: 1)
+  end
+
+  def potential_friends
+    User.all.select { |user| (!user.friends.include?(self) && user != @user) }.map { |user| [user.username, user.id]}
   end
 end
 

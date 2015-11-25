@@ -38,15 +38,15 @@
     <div class="friend-form-container">
      <h3> Find Friends </h3>
      <%= form_for Friendship.new do |f| %>
-     <%= f.select(:acceptor_id, options_for_select(@registered_users))%>
+     <%= f.select(:acceptor_id, options_for_select(@user.potential_friends))%>
      <%= f.submit "Send Friend Request" %>
      <%end%>
    </div>
 
    <div class="pending-friendships">
-    <% unless @friendships_pending.empty? %>
+    <% unless @user.pending_friendships.empty? %>
     <h3> Pending Friend Requests </h3>
-    <% @friendships_pending.each do |p| %>
+    <% @user.pending_friendships.each do |p| %>
     <p><%= p.requester.username %></p>
     <%= form_for p, :method => :patch do |f|%>
     <%= f.submit 'Accept Friend Request' %>
