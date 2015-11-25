@@ -15,6 +15,10 @@ html body {
   background-color: #88B540;
 }
 
+.interests{
+  text-align: center;
+}
+
 .new-activity-form-container{
   color:white;
 }
@@ -52,6 +56,11 @@ html body {
 .button {
   background-color: #FEBD5F;
 }
+
+.martini{
+  margin: 12px;
+}
+
 .center {
   max-height: 25%;
   width: 100%;
