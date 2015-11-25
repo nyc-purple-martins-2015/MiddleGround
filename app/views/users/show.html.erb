@@ -36,6 +36,9 @@
       <!-- form to add address to profile -->
     </div>
     <div class="friend-form-container">
+    <% if flash[:notice] %>
+      <div class="notice"><%= flash[:notice] %></div>
+    <% end %>
      <h3> Find Friends </h3>
      <%= form_for Friendship.new do |f| %>
      <%= f.select(:acceptor_id, options_for_select(@user.potential_friends))%>
