@@ -31,11 +31,14 @@ class User < ActiveRecord::Base
   end
 
   def already_friended(user)
-    self.requested_friendships.any?(acceptor: user)
+    self.requested_friendships.any? { |friendship| friendship.acceptor ==  user }
   end
 
   def potential_friends
-    User.all.select { |user| (user.friends.exclude?(self)}.select{|user| user != current_user }.select{|user| !current_user.already_friended(user)}.map { |user| [user.username, user.id]}
+    already_friends = User.all.select { |user| user.friends.exclude?(self)}
+    not_you = already_friends.select{|user| user != self }
+    pending_requests = not_you.select{|user| !self.already_friended(user)}
+    format_for_dropdown = pending_requests.map { |user| [user.username, user.id]}
   end
 
   def send_welcome_email
