@@ -30,8 +30,12 @@ class User < ActiveRecord::Base
     self.accepted_friendships.where(pending: 1)
   end
 
+  def already_friended(user)
+    self.requested_friendships.any?(acceptor: user)
+  end
+
   def potential_friends
-    User.all.select { |user| (!user.friends.include?(self) && user != @user) }.map { |user| [user.username, user.id]}
+    User.all.select { |user| (user.friends.exclude?(self)}.select{|user| user != current_user }.select{|user| !current_user.already_friended(user)}.map { |user| [user.username, user.id]}
   end
 
   def send_welcome_email
