@@ -55,14 +55,12 @@ $(document).ready(function(){
     }
     $(".page-container").on('submit', "#new-activity-form-container", function(event){
       event.preventDefault();
-      debugger
       var friend = $(this).find('select#user').children().data();
       var myLocation = new google.maps.LatLng({lat: lat, lng: lng});
       var friendLocation = new google.maps.LatLng({lat: parseFloat(friend.lat), lng: parseFloat(friend.long)});
       var midpoint = google.maps.geometry.spherical.interpolate(myLocation, friendLocation, 0.5);
       var activity = $("#activity").val();
       var postRoute =$('form').attr("action");
-      debugger
       var newActivityRequest = $.ajax({
         method: 'post',
         url: postRoute,
