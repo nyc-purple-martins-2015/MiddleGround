@@ -11,12 +11,12 @@ html body {
 }
 
 .interests{
-  font-size:20px;
+  font-size:23px;
   text-align: center;
 }
 
 .recent-activities-container{
-  font-size:25px;
+  font-size: 23px;
 }
 
 .new-activity-form-container{
@@ -42,8 +42,12 @@ html body {
   overflow: hidden;
 }
 
-#activity-new{
-  font-size:24px;
+.friends-container {
+  font-size: 23px;
+}
+
+#activity-new {
+  font-size:23px;
 }
 
 .title-area {
@@ -68,10 +72,24 @@ html body {
   /*width: 100%;*/
 }
 
+#activity-button a:hover{
+background-color: #FEBD5F;
+}
+
 .button {
   background-color: #FEBD5F;
   font-weight: bold;
   text-shadow: 2px 2px darkgray;
+}
+
+.rating-button{
+  background-color: #56ABB2;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.rating-button:hover {
+  background-color: #FEBD5F;
 }
 
 #getGeolocation{
@@ -111,6 +129,8 @@ input[type=submit] {
   color: white;
   text-align: center;
   border-radius: 5px;
+  font-weight: bold;
+  font-size: 90%;
   /*margin-left: 33%*/
 }
 
@@ -123,9 +143,6 @@ input[type=submit]:hover {
   z-index: 1;*/
 }
 
-a:hover {
-
-}
 
 a:link {
 
