@@ -8,6 +8,7 @@
       <div class="recent-activities-container">
         <br>
         Recent MiddleGround Activities
+        <br><br>
         <% @user.activities.last(5).each do |s| %>
         <p><%=s.title%></p>
         <% if s.not_yet_rated(@user) %>
@@ -18,25 +19,25 @@
 
 <div class="row">
   <div class="large-4 small-12 large-centered small-centered columns">
-          <button class="rating-button">Rate It</button>
-          <div class='rate-form'>
-            <div class="form_fields">
-            <%= form_for Vote.new do |f|%>
-            <%=f.hidden_field :value, :value => 1 %>
-            <%=f.hidden_field :activity_id, :value => s.id %>
-            <%= f.submit 'Loved It' %>
-            <%end%>
-            <%= form_for Vote.new do |f|%>
-            <%=f.hidden_field :value, :value => -1 %>
-            <%=f.hidden_field :activity_id, :value => s.id %>
-            <%= f.submit 'Hated It' %>
-            <%end%>
-            </div>
-          </div>
+    <button class="rating-button">Rate It</button>
+      <div class='rate-form'>
+        <div class="form_fields">
+          <%= form_for Vote.new do |f|%>
+          <%=f.hidden_field :value, :value => 1 %>
+          <%=f.hidden_field :activity_id, :value => s.id %>
+          <%= f.submit 'Loved It' %>
           <%end%>
+          <%= form_for Vote.new do |f|%>
+          <%=f.hidden_field :value, :value => -1 %>
+          <%=f.hidden_field :activity_id, :value => s.id %>
+          <%= f.submit 'Hated It' %>
+          <%end%>
+          </div>
         </div>
         <%end%>
       </div>
+      <%end%>
+    </div>
   </div>
 </div>
 
@@ -79,6 +80,7 @@
       <div class="friends-container">
         <br>
          Your Friends
+        <br>
         <% @user.friends.each do |friend| %>
         <p><%= friend.username %></p>
         <% end %>
