@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   has_many :friend_activities, class_name: 'Activity', foreign_key: :friend_id
   has_many :addresses
   has_many :votes
-  after_create :send_welcome_email
+  # after_create :send_welcome_email
 
   def friends
     sql1 = self.accepted_friends.where('friendships.pending = ?', 0).to_sql

@@ -4,7 +4,7 @@ class Activity < ActiveRecord::Base
   belongs_to :creator, class_name: 'User'
   belongs_to :friend, class_name: 'User'
   has_many :votes
-  after_create :send_activity_email
+  # after_create :send_activity_email
 
   def self.parse_businesses(possible_businesses)
     possible_businesses.map {|business| [business["title"], business["alias"]]}
