@@ -40,6 +40,10 @@ html body {
   overflow: hidden;
 }
 
+#activity-new{
+  font-size:24px;
+}
+
 .title-area {
   text-align:center;
 }
