@@ -20,9 +20,9 @@ function printAddress(latitude, longitude) {
 
     geocoder.geocode({ 'latLng': yourLocation }, function (results, status) {
     if(status == google.maps.GeocoderStatus.OK) {
-      if(results[1]) {
+      if(results[0]) {
         $("#getGeolocation").fadeOut(function() {
-          $(this).html(results[1].formatted_address).fadeIn();
+          $(this).html(results[0].formatted_address).fadeIn();
         });
       } else {
          $("#getGeolocation").html("Latitude: " + latitude.toFixed(2) +
