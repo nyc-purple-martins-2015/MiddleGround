@@ -26,6 +26,7 @@ $(document).ready(function(){
         mapTypeId: google.maps.MapTypeId.ROADMAP
       };
       var map = new google.maps.Map(document.getElementById("map_container"), options);
+      var bounds = new google.maps.LatLngBounds();
 
       var marker = new google.maps.Marker({
         position: coords,
@@ -34,51 +35,60 @@ $(document).ready(function(){
         animation: google.maps.Animation.DROP,
         title:"You are here!"
       });
-      var friend = $('#user-location').data();
-      var friendLocation = new google.maps.LatLng({lat: parseFloat(friend.friendLat), lng: parseFloat(friend.friendLong)});
-      var friendMarker = new google.maps.Marker({
-        position: friendLocation,
-        icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
-        map: map,
-        animation: google.maps.Animation.DROP,
-        title: "Your friend is here!"
-      });
-      var destination = $('article.destination').data();
-      var destLocation = new google.maps.LatLng({lat: parseFloat(destination.destinationLat), lng: parseFloat(destination.destinationLong)});
-      var meeting = new google.maps.Marker({
-        position: destLocation,
-        animation: google.maps.Animation.DROP,
-        map: map,
-        title: "Your desintation is here!"
-      });
-
-    }
-    $(".page-container").on('submit', "#new-activity-form-container", function(event){
-      event.preventDefault();
-      var friend = $(this).find('select#user').children().data();
-      var myLocation = new google.maps.LatLng({lat: lat, lng: lng});
-      var friendLocation = new google.maps.LatLng({lat: parseFloat(friend.lat), lng: parseFloat(friend.long)});
-      var midpoint = google.maps.geometry.spherical.interpolate(myLocation, friendLocation, 0.5);
-      var activity = $("#activity").val();
-      var postRoute =$('form').attr("action");
-      var newActivityRequest = $.ajax({
-        method: 'post',
-        url: postRoute,
-        data: {
-          midlat: midpoint.lat().toFixed(4),
-          midlong: midpoint.lng().toFixed(4),
-          activity: activity,
-          friend: friend.id
-        },
-        datatype: 'json'
-      });
-      newActivityRequest.done(function(newActivityHTML){
-        $(".page-container").html(newActivityHTML);
-        navigator.geolocation.getCurrentPosition(success);
-      });
-      newActivityRequest.fail(function(response){
-        $(".error-message").empty();
-        $(".error-message").html("I'm sorry, there were no activities that match your criteria. Please try again");
-      });
-    });
+      if (marker !== 'undefined'){
+        bounds.extend(marker.position);
+      };
+        var friend = $('#user-location').data();
+        var friendLocation = new google.maps.LatLng({lat: parseFloat(friend.friendLat), lng: parseFloat(friend.friendLong)});
+        var friendMarker = new google.maps.Marker({
+          position: friendLocation,
+          icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
+          map: map,
+          animation: google.maps.Animation.DROP,
+          title: "Your friend is here!"
+        });
+        if (friendMarker !== 'undefined'){
+          bounds.extend(friendMarker.position);
+        };
+          var destination = $('article.destination').data();
+          var destLocation = new google.maps.LatLng({lat: parseFloat(destination.destinationLat), lng: parseFloat(destination.destinationLong)});
+          var meeting = new google.maps.Marker({
+            position: destLocation,
+            animation: google.maps.Animation.DROP,
+            map: map,
+            title: "Your desintation is here!"
+          });
+          if (meeting !== 'undefined'){
+            bounds.extend(meeting.position);
+          };
+          map.fitBounds(bounds);
+          }
+          $(".page-container").on('submit', "#new-activity-form-container", function(event){
+            event.preventDefault();
+            var friend = $(this).find('select#user').children().data();
+            var myLocation = new google.maps.LatLng({lat: lat, lng: lng});
+            var friendLocation = new google.maps.LatLng({lat: parseFloat(friend.lat), lng: parseFloat(friend.long)});
+            var midpoint = google.maps.geometry.spherical.interpolate(myLocation, friendLocation, 0.5);
+            var activity = $("#activity").val();
+            var postRoute =$('form').attr("action");
+            var newActivityRequest = $.ajax({
+              method: 'post',
+              url: postRoute,
+              data: {
+                midlat: midpoint.lat().toFixed(4),
+                midlong: midpoint.lng().toFixed(4),
+                activity: activity,
+                friend: friend.id
+              },
+              datatype: 'json'
+            });
+            newActivityRequest.done(function(newActivityHTML){
+              $(".page-container").html(newActivityHTML);
+              navigator.geolocation.getCurrentPosition(success);
+            });
+            newActivityRequest.fail(function(response){
+              $(".error-message").empty();
+              $(".error-message").html("I'm sorry, there were no activities that match your criteria. Please try again");
+            });
+          });
 });
