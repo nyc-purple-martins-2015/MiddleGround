@@ -27,7 +27,7 @@ function printAddress(latitude, longitude) {
     if(status == google.maps.GeocoderStatus.OK) {
       if(results[0]) {
         $("#getGeolocation").fadeOut(function() {
-          $(this).html(results[0].formatted_address).fadeIn();
+          $(this).html(results[1].formatted_address).fadeIn();
         });
       } else {
         error('Google did not return any results.');
