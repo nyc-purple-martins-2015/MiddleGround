@@ -1,6 +1,6 @@
 $(document).ready(function(){
   $(".rating-button").on('click', function(event){
-    $(this).parents(".ratings").children(".rate-form").slideToggle();
+    $(this).parent().children(".rate-form").slideToggle();
   })
 });
 
