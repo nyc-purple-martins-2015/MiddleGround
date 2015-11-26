@@ -28,7 +28,9 @@ html body {
 }
 
 .favicon{
-  padding-left: 8px;
+  padding-left:4px;
+  /*padding-left: 8px;*/
+  /*padding-bottom:-5px;*/
 }
 
 .map-container {
@@ -51,6 +53,7 @@ html body {
 #nav-buttons {
   background-color:#56ABB2;
   color:white;
+  text-shadow: 0px 0px #56ABB2;
 }
 
 #logo{
@@ -67,6 +70,8 @@ html body {
 
 .button {
   background-color: #FEBD5F;
+  font-weight: bold;
+  text-shadow: 2px 2px darkgray;
 }
 
 #getGeolocation{
