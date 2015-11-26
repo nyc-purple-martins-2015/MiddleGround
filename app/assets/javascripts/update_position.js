@@ -11,29 +11,26 @@ function getLocation() {
 }
 function showPosition(position) {
   printAddress(position.coords.latitude, position.coords.longitude);
-    // $("#getGeolocation").html("Latitude: " + position.coords.latitude +
-    // "<br>Longitude: " + position.coords.longitude);
 }
 
 
 function printAddress(latitude, longitude) {
-    // set up the Geocoder object
     var geocoder = new google.maps.Geocoder();
-    // turn coordinates into an object
     var yourLocation = new google.maps.LatLng(latitude, longitude);
 
-    // find out info about our location
     geocoder.geocode({ 'latLng': yourLocation }, function (results, status) {
     if(status == google.maps.GeocoderStatus.OK) {
-      if(results[0]) {
+      if(results[1]) {
         $("#getGeolocation").fadeOut(function() {
           $(this).html(results[1].formatted_address).fadeIn();
         });
       } else {
-        error('Google did not return any results.');
+         $("#getGeolocation").html("Latitude: " + latitude.toFixed(2) +
+       "<br>Longitude: " + longitude.toFixed(2));
       }
     } else {
-      error("Reverse Geocoding failed due to: " + status);
+       $("#getGeolocation").html("Latitude: " + latitude.toFixed(2) +
+       "<br>Longitude: " + longitude.toFixed(2));
     }
   });
 }
