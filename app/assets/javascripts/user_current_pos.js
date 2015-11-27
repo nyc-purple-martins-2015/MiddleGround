@@ -1,3 +1,7 @@
+/*
+  When you have time, you should split the success function into component 
+  functions so that success "tells a story" - it's almost unreadable as it is now
+*/
 $(document).ready(function(){
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(success);

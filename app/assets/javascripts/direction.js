@@ -22,6 +22,11 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
   });
 }
 
+/ * 
+You might want to be careful with an "on-change" event handler - they can
+ end up firing many times.
+Using the "blur" event - i.e. focus lost - is sometimes preferable.
+*/
 document.addEventListener('DOMContentLoaded', function(){
   $("#mode").change(function(event){
     var domMap = $('map-image');
