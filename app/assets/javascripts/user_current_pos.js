@@ -27,7 +27,6 @@ $(document).ready(function(){
       };
       var map = new google.maps.Map(document.getElementById("map_container"), options);
       var bounds = new google.maps.LatLngBounds();
-
       var marker = new google.maps.Marker({
         position: coords,
         icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
@@ -38,34 +37,34 @@ $(document).ready(function(){
       if (marker !== 'undefined'){
         bounds.extend(marker.position);
       };
-        var friend = $('#user-location').data();
-        var friendLocation = new google.maps.LatLng({lat: parseFloat(friend.friendLat), lng: parseFloat(friend.friendLong)});
-        var friendMarker = new google.maps.Marker({
-          position: friendLocation,
-          icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
-          map: map,
+      var friend = $('#user-location').data();
+      var friendLocation = new google.maps.LatLng({lat: parseFloat(friend.friendLat), lng: parseFloat(friend.friendLong)});
+      var friendMarker = new google.maps.Marker({
+        position: friendLocation,
+        icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
+        map: map,
+        animation: google.maps.Animation.DROP,
+        title: "Your friend is here!"
+      });
+      if (friendMarker !== 'undefined'){
+        bounds.extend(friendMarker.position);
+      };
+        var destination = $('article.destination').data();
+        var destLocation = new google.maps.LatLng({lat: parseFloat(destination.destinationLat), lng: parseFloat(destination.destinationLong)});
+        var meeting = new google.maps.Marker({
+          position: destLocation,
           animation: google.maps.Animation.DROP,
-          title: "Your friend is here!"
+          map: map,
+          title: "Your destination is here!"
         });
-        if (friendMarker !== 'undefined'){
-          bounds.extend(friendMarker.position);
+        if (meeting !== 'undefined'){
+          bounds.extend(meeting.position);
         };
-          var destination = $('article.destination').data();
-          var destLocation = new google.maps.LatLng({lat: parseFloat(destination.destinationLat), lng: parseFloat(destination.destinationLong)});
-          var meeting = new google.maps.Marker({
-            position: destLocation,
-            animation: google.maps.Animation.DROP,
-            map: map,
-            title: "Your desintation is here!"
-          });
-          if (meeting !== 'undefined'){
-            bounds.extend(meeting.position);
-          };
-          map.fitBounds(bounds);
-          }
-          $(".page-container").on('submit', "#new-activity-form-container", function(event){
+        map.fitBounds(bounds);
+        }
+        $(".page-container").on('submit', "#new-activity-form-container", function(event){
             event.preventDefault();
-            var friend = $(this).find('select#user').children().data();
+            var friend = $(this).find('select#user :selected').data();
             var myLocation = new google.maps.LatLng({lat: lat, lng: lng});
             var friendLocation = new google.maps.LatLng({lat: parseFloat(friend.lat), lng: parseFloat(friend.long)});
             var midpoint = google.maps.geometry.spherical.interpolate(myLocation, friendLocation, 0.5);
