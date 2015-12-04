@@ -1,3 +1,4 @@
+# Your file names should be lower case for these models
 class Activity < ActiveRecord::Base
   validates :location, :title, presence: true
   validates :creator_id, :friend_id, presence: true

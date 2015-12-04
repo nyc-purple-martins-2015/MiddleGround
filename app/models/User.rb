@@ -34,8 +34,14 @@ class User < ActiveRecord::Base
     self.requested_friendships.any? { |friendship| friendship.acceptor ==  user }
   end
 
+  # This method is confusing. It looks like you create some 
+  # fairly complex lists but never use them.
+  # Should this be  "users who are not my friends and who have no pending request either way?"
+  # That's not what it returns
   def potential_friends
+    #Already friends is just "friends", no?
     already_friends = User.all.select { |user| user.friends.exclude?(self)}
+    #How about friends.where.not(id: self.id)
     not_you = already_friends.select{|user| user != self }
     pending_requests = not_you.select{|user| !self.already_friended(user)}
     format_for_dropdown = pending_requests.map { |user| [user.username, user.id]}
